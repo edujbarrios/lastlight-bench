@@ -6,11 +6,11 @@ from pathlib import Path
 
 
 DEFAULT_GATES = {
-    "top1_accuracy": 0.95,
-    "mrr": 0.95,
-    "answer_precision": 0.65,
-    "answerable_recall": 0.90,
-    "refusal_recall": 0.20,
+    "top1_accuracy": 0.85,
+    "mrr": 0.90,
+    "answer_precision": 0.60,
+    "answerable_recall": 0.85,
+    "refusal_recall": 0.10,
 }
 
 

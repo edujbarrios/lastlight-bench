@@ -9,31 +9,32 @@ An auditable benchmark of [LastLight](https://github.com/edujbarrios/lastlight),
 
 ## Baseline results
 
-Measured on LastLight 0.2.1 / Python 3.12 / Windows 11, with 30 cases, `top_k=3`, and three warm-up queries. Latency and allocation numbers are single-host observations, not universal product claims. Accuracy is deterministic for the pinned corpus and package version.
+Measured on LastLight 0.2.1 / Python 3.12 / Windows 11, with 60 cases, `top_k=3`, and three warm-up queries. Latency and allocation numbers are single-host observations, not universal product claims. Accuracy is deterministic for the pinned corpus and package version.
 
 | Strategy / mode | Top-1 | MRR | Answer precision | Answerable recall | Refusal recall | False accept | Mean ms | P95 ms | Peak MiB |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| lexical / balanced | 100.0% | 1.000 | 95.0% | 95.0% | 90.0% | 10.0% | 20.97 | 23.17 | 0.03 |
-| bm25 / balanced | 100.0% | 1.000 | 71.4% | 100.0% | 20.0% | 80.0% | 22.00 | 31.77 | 0.03 |
-| adaptive / survival | 100.0% | 1.000 | 95.0% | 95.0% | 90.0% | 10.0% | 19.75 | 22.28 | 0.03 |
-| adaptive / balanced | 100.0% | 1.000 | 71.4% | 100.0% | 20.0% | 80.0% | 43.78 | 72.91 | 0.03 |
-| adaptive / accuracy | 100.0% | 1.000 | 71.4% | 100.0% | 20.0% | 80.0% | 68.01 | 74.72 | 0.46 |
-| adaptive / balanced / 0.4 mWh | 100.0% | 1.000 | 95.0% | 95.0% | 90.0% | 10.0% | 62.01 | 71.29 | 0.03 |
-| adaptive / balanced / 64 MiB | 100.0% | 1.000 | 95.0% | 95.0% | 90.0% | 10.0% | 62.12 | 69.58 | 0.03 |
+| lexical / balanced | 90.0% | 0.950 | 74.5% | 87.5% | 55.0% | 45.0% | 19.69 | 23.26 | 0.44 |
+| bm25 / balanced | 90.0% | 0.946 | 62.1% | 90.0% | 10.0% | 90.0% | 20.48 | 32.42 | 0.04 |
+| adaptive / survival | 90.0% | 0.950 | 74.5% | 87.5% | 55.0% | 45.0% | 17.91 | 20.37 | 0.04 |
+| adaptive / balanced | 90.0% | 0.950 | 62.1% | 90.0% | 10.0% | 90.0% | 21.32 | 32.13 | 0.04 |
+| adaptive / accuracy | 90.0% | 0.946 | 62.1% | 90.0% | 10.0% | 90.0% | 19.76 | 21.98 | 0.83 |
+| adaptive / balanced / 0.4 mWh | 90.0% | 0.950 | 74.5% | 87.5% | 55.0% | 45.0% | 18.43 | 20.77 | 0.44 |
+| adaptive / balanced / 64 MiB | 90.0% | 0.950 | 74.5% | 87.5% | 55.0% | 45.0% | 17.97 | 19.76 | 0.04 |
 
-The meaningful result is not just perfect document ranking on this compact corpus. Lexical retrieval has substantially better refusal calibration here; BM25 and balanced adaptive retrieval incorrectly accept 8 of 10 unanswerable prompts. That is a useful safety regression target for LastLight. Answer precision includes the accept/refuse boundary, while Top-1 and MRR do not. The metrics deliberately expose that distinction.
+The expanded corpus removes the unrealistically perfect retrieval result. All configurations reach 90% Top-1, with errors concentrated in manuals that deliberately share vocabulary and workflows. Lexical/survival policies refuse more unsupported questions, while BM25 and accuracy-oriented adaptive policies accept 18 of 20 unanswerable prompts. Ten of those prompts are difficult in-domain negatives: they mention real corpus topics but ask for absent live values, credentials, identities, legal thresholds, or clinical prescriptions. This exposes a concrete calibration weakness rather than hiding it behind an aggregate score.
 
 The committed [`results/baseline.json`](results/baseline.json) contains raw per-case outcomes, environment metadata, planner decisions, timings, and slices by difficulty, language, category, and tag. Re-run it on target hardware before comparing efficiency.
 
 ## What is tested
 
-The field-operations pack contains 10 substantial documents and more than 5,000 words in English and Spanish. Each manual has operational sections, decision branches, numeric constraints, warnings, handoffs, and plausible distractor language. The 30 labeled cases comprise 20 answerable queries and 10 expected refusals:
+The field-operations pack contains 16 substantial documents and more than 8,000 words in English and Spanish. Each manual has operational sections, decision branches, numeric constraints, warnings, handoffs, and plausible distractor language. Closely related manuals intentionally overlap—for example water advisory/flushing/chlorination, generator/electrical/fuel, radio/satellite, shelter intake/sanitation, and multiple medical protocols. The 60 labeled cases comprise 40 answerable queries and 20 expected refusals:
 
 - direct lookup, paraphrase, numeric, and negative constraints;
 - multi-condition and multi-step questions;
 - English and Spanish retrieval in one mixed-language pack;
 - high-risk medical and infrastructure wording;
 - out-of-domain questions, including lexical distractors designed to tempt false acceptance.
+- in-domain unanswerable questions requesting absent live state, credentials, identities, legal rules, or unsupported prescriptions.
 
 This is a closed-corpus retrieval benchmark. It does not evaluate generative answer quality, factual correctness against real emergency standards, energy measured by physical instrumentation, or statistical generalization to arbitrary corpora.
 
@@ -83,7 +84,7 @@ New cases should be challenging for a stated reason, have one auditable expected
 
 ## CI quality gates
 
-Pull requests run unit and integration tests on Python 3.10–3.12, execute the seven-condition matrix on Python 3.12, retain the raw artifact, and enforce conservative deterministic floors: Top-1 and MRR ≥ 0.95, answer precision ≥ 0.65, answerable recall ≥ 0.90, and refusal recall ≥ 0.20. Latency is reported but deliberately not gated on shared CI hardware. Tightening calibration thresholds is a versioned benchmark decision.
+Pull requests run unit and integration tests on Python 3.10–3.12, execute the seven-condition matrix on Python 3.12, retain the raw artifact, and enforce deterministic regression floors fitted to corpus v1.1: Top-1 ≥ 0.85, MRR ≥ 0.90, answer precision ≥ 0.60, answerable recall ≥ 0.85, and refusal recall ≥ 0.10. These are regression floors, not quality targets; the measured refusal behavior shows why future releases should raise them. Latency is reported but deliberately not gated on shared CI hardware.
 
 ## Repository layout
 

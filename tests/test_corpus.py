@@ -8,8 +8,8 @@ CORPUS = ROOT / "corpus" / "field-ops-v1"
 
 def test_corpus_is_substantial_and_explicitly_synthetic() -> None:
     documents = list(CORPUS.rglob("*.md"))
-    assert len(documents) == 10
-    assert sum(len(path.read_text(encoding="utf-8").split()) for path in documents) >= 5_000
+    assert len(documents) == 16
+    assert sum(len(path.read_text(encoding="utf-8").split()) for path in documents) >= 8_000
     for document in documents:
         text = document.read_text(encoding="utf-8").lower()
         assert len(text.split()) >= 400, document
