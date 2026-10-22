@@ -1,0 +1,9 @@
+{
+  "format_version": 1,
+  "name": "Synthetic Municipal Field Operations",
+  "version": "1.0.0",
+  "languages": ["en", "es"],
+  "description": "AI-generated synthetic operational documents for benchmark use only.",
+  "license": "CC0-1.0",
+  "source": "synthetic://chatgpt/lastlight-bench/field-ops-v1"
+}
