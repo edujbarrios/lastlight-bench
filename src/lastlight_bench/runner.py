@@ -5,7 +5,6 @@ from datetime import datetime, timezone
 import json
 from pathlib import Path
 import platform
-import sys
 import time
 import tracemalloc
 from typing import Any

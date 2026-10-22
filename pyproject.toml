@@ -17,6 +17,7 @@ dev = ["pytest>=8.0", "ruff>=0.8"]
 [project.scripts]
 lastlight-bench = "lastlight_bench.cli:main"
 lastlight-bench-suite = "lastlight_bench.suite:main"
+lastlight-bench-gate = "lastlight_bench.gates:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

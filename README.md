@@ -81,6 +81,10 @@ Treat a change in corpus, labels, LastLight version, Python version, OS, process
 
 New cases should be challenging for a stated reason, have one auditable expected document (or an explicit refusal label), avoid leaking filenames into queries, and pass schema checks. Never replace an unfavorable result with an easier query: add a versioned correction and explain it.
 
+## CI quality gates
+
+Pull requests run unit and integration tests on Python 3.10–3.12, execute the seven-condition matrix on Python 3.12, retain the raw artifact, and enforce conservative deterministic floors: Top-1 and MRR ≥ 0.95, answer precision ≥ 0.65, answerable recall ≥ 0.90, and refusal recall ≥ 0.20. Latency is reported but deliberately not gated on shared CI hardware. Tightening calibration thresholds is a versioned benchmark decision.
+
 ## Repository layout
 
 ```text
