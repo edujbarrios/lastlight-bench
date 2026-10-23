@@ -9,7 +9,7 @@ description = "Reproducible quality and efficiency benchmark for LastLight"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MPL-2.0"}
-dependencies = ["lastlight==0.2.1"]
+dependencies = ["lastlight==0.2.2"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0,<9", "ruff==0.12.12"]

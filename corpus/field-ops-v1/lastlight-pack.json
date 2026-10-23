@@ -1,7 +1,7 @@
 {
   "format_version": 1,
   "name": "Synthetic Municipal Field Operations",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "languages": ["en", "es"],
   "description": "Synthetic operational corpus with overlapping field procedures for benchmark evaluation only.",
   "license": "CC0-1.0",
