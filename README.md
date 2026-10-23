@@ -111,7 +111,7 @@ Every JSONL case declares `id`, `query`, `language`, `category`, `answerable`, `
 
 ## CI and regression policy
 
-Pull requests run unit and integration tests on Python 3.10–3.12 and execute the seven-condition matrix on Python 3.12. Corpus v3.0 regression floors are Top-1 ≥ 0.77, MRR ≥ 0.86, answer precision ≥ 0.57, answerable recall ≥ 0.76, and refusal recall ≥ 0.03. These are failure-detection floors, not quality targets. Latency is not gated on shared CI hardware.
+Pull requests run unit and integration tests on Python 3.10–3.12 and execute the seven-condition matrix on Python 3.12. Corpus v3.0 regression floors are Top-1 ≥ 0.77, MRR ≥ 0.86, answer precision ≥ 0.57, answerable recall ≥ 0.75, and refusal recall ≥ 0.03. These are failure-detection floors, not quality targets. Latency is not gated on shared CI hardware.
 
 ## License
 

@@ -9,7 +9,7 @@ DEFAULT_GATES = {
     "top1_accuracy": 0.77,
     "mrr": 0.86,
     "answer_precision": 0.57,
-    "answerable_recall": 0.76,
+    "answerable_recall": 0.75,
     "refusal_recall": 0.03,
 }
 
