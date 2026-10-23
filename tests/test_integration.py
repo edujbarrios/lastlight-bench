@@ -16,7 +16,7 @@ def test_lexical_smoke_run_uses_public_api() -> None:
         warmup=1,
     )
     assert result["implementation"]["name"] == "lastlight"
-    assert result["summary"]["cases"] == 30
-    assert result["summary"]["top1_accuracy"] >= 0.95
-    assert result["summary"]["refusal_recall"] >= 0.80
+    assert result["summary"]["cases"] == 120
+    assert result["summary"]["top1_accuracy"] >= 0.80
+    assert result["summary"]["refusal_recall"] >= 0.40
 

@@ -5,35 +5,36 @@
 An auditable benchmark of [LastLight](https://github.com/edujbarrios/lastlight), the dependency-free offline retrieval library for degraded-infrastructure scenarios. It measures retrieval, answer/refusal calibration, latency, Python allocation peaks, multilingual routing, and adaptive policy selection through LastLight's public API.
 
 > [!CAUTION]
-> **The corpus and every evaluation question were invented by ChatGPT.** They simulate the content, structure, ambiguity, and operational language of a realistic municipal emergency-operations document set. They do not describe a real organization, are not expert-validated, and must never be used as medical, public-health, electrical, food-safety, or emergency guidance.
+> **The recommendations included in this corpus were produced by ChatGPT for benchmarking purposes.** In a real deployment, every statement in the source documents must be verified in advance and must follow the criteria, authority, and operating procedures of the organization responsible for them. Because those internal criteria are normally private, this repository uses a synthetic document set that only emulates how such operational guidance might be structured. This dataset must never be used for operational decision-making; it exists exclusively to evaluate the benchmark.
 
 ## Baseline results
 
-Measured on LastLight 0.2.1 / Python 3.12 / Windows 11, with 30 cases, `top_k=3`, and three warm-up queries. Latency and allocation numbers are single-host observations, not universal product claims. Accuracy is deterministic for the pinned corpus and package version.
+Measured on LastLight 0.2.1 / Python 3.12 / Windows 11, with 120 cases, `top_k=3`, and three warm-up queries. Latency and allocation numbers are single-host observations, not universal product claims. Accuracy is deterministic for the pinned corpus and package version.
 
 | Strategy / mode | Top-1 | MRR | Answer precision | Answerable recall | Refusal recall | False accept | Mean ms | P95 ms | Peak MiB |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| lexical / balanced | 100.0% | 1.000 | 95.0% | 95.0% | 90.0% | 10.0% | 20.97 | 23.17 | 0.03 |
-| bm25 / balanced | 100.0% | 1.000 | 71.4% | 100.0% | 20.0% | 80.0% | 22.00 | 31.77 | 0.03 |
-| adaptive / survival | 100.0% | 1.000 | 95.0% | 95.0% | 90.0% | 10.0% | 19.75 | 22.28 | 0.03 |
-| adaptive / balanced | 100.0% | 1.000 | 71.4% | 100.0% | 20.0% | 80.0% | 43.78 | 72.91 | 0.03 |
-| adaptive / accuracy | 100.0% | 1.000 | 71.4% | 100.0% | 20.0% | 80.0% | 68.01 | 74.72 | 0.46 |
-| adaptive / balanced / 0.4 mWh | 100.0% | 1.000 | 95.0% | 95.0% | 90.0% | 10.0% | 62.01 | 71.29 | 0.03 |
-| adaptive / balanced / 64 MiB | 100.0% | 1.000 | 95.0% | 95.0% | 90.0% | 10.0% | 62.12 | 69.58 | 0.03 |
+| lexical / balanced | 81.2% | 0.885 | 64.0% | 80.0% | 42.5% | 57.5% | 79.45 | 134.34 | 0.45 |
+| bm25 / balanced | 88.8% | 0.935 | 60.2% | 88.8% | 5.0% | 95.0% | 126.54 | 139.72 | 0.45 |
+| adaptive / survival | 81.2% | 0.881 | 64.0% | 80.0% | 42.5% | 57.5% | 125.24 | 142.10 | 0.06 |
+| adaptive / balanced | 86.2% | 0.927 | 59.0% | 86.2% | 7.5% | 92.5% | 133.14 | 161.88 | 0.45 |
+| adaptive / accuracy | 88.8% | 0.935 | 60.2% | 88.8% | 5.0% | 95.0% | 130.51 | 155.62 | 1.18 |
+| adaptive / balanced / 0.4 mWh | 81.2% | 0.881 | 64.0% | 80.0% | 42.5% | 57.5% | 126.09 | 142.55 | 0.06 |
+| adaptive / balanced / 64 MiB | 81.2% | 0.881 | 64.0% | 80.0% | 42.5% | 57.5% | 122.84 | 132.32 | 0.45 |
 
-The meaningful result is not just perfect document ranking on this compact corpus. Lexical retrieval has substantially better refusal calibration here; BM25 and balanced adaptive retrieval incorrectly accept 8 of 10 unanswerable prompts. That is a useful safety regression target for LastLight. Answer precision includes the accept/refuse boundary, while Top-1 and MRR do not. The metrics deliberately expose that distinction.
+The larger corpus produces a much more discriminating result. Top-1 ranges from 81.2% to 88.8%, with errors concentrated in manuals that deliberately share terminology and workflows. BM25 improves ranking and answerable recall, but accepts 38 of 40 unanswerable prompts; its 5% refusal recall and 95% false-accept rate show that ranking strength does not imply safe answer calibration. Lexical and survival policies reject more unsupported prompts, but still accept 23 of 40. Thirty refusal cases are difficult in-domain negatives: they mention genuine corpus topics while asking for absent live values, credentials, identities, authority decisions, or unsupported prescriptions.
 
 The committed [`results/baseline.json`](results/baseline.json) contains raw per-case outcomes, environment metadata, planner decisions, timings, and slices by difficulty, language, category, and tag. Re-run it on target hardware before comparing efficiency.
 
 ## What is tested
 
-The field-operations pack contains 10 substantial documents and more than 5,000 words in English and Spanish. Each manual has operational sections, decision branches, numeric constraints, warnings, handoffs, and plausible distractor language. The 30 labeled cases comprise 20 answerable queries and 10 expected refusals:
+The field-operations pack contains 24 substantial documents and more than 12,000 words in English and Spanish. Each manual has operational sections, decision branches, numeric constraints, warnings, handoffs, and plausible distractor language. Closely related manuals intentionally overlap—for example water advisory/flushing/pump/chlorination, generator/electrical/battery/fuel, radio/satellite/formal messages, shelter intake/sanitation/fire watch, and multiple medical protocols. The 120 labeled cases comprise 80 answerable queries and 40 expected refusals:
 
 - direct lookup, paraphrase, numeric, and negative constraints;
 - multi-condition and multi-step questions;
 - English and Spanish retrieval in one mixed-language pack;
 - high-risk medical and infrastructure wording;
 - out-of-domain questions, including lexical distractors designed to tempt false acceptance.
+- in-domain unanswerable questions requesting absent live state, credentials, identities, legal rules, or unsupported prescriptions.
 
 This is a closed-corpus retrieval benchmark. It does not evaluate generative answer quality, factual correctness against real emergency standards, energy measured by physical instrumentation, or statistical generalization to arbitrary corpora.
 
@@ -83,7 +84,7 @@ New cases should be challenging for a stated reason, have one auditable expected
 
 ## CI quality gates
 
-Pull requests run unit and integration tests on Python 3.10–3.12, execute the seven-condition matrix on Python 3.12, retain the raw artifact, and enforce conservative deterministic floors: Top-1 and MRR ≥ 0.95, answer precision ≥ 0.65, answerable recall ≥ 0.90, and refusal recall ≥ 0.20. Latency is reported but deliberately not gated on shared CI hardware. Tightening calibration thresholds is a versioned benchmark decision.
+Pull requests run unit and integration tests on Python 3.10–3.12, execute the seven-condition matrix on Python 3.12, retain the raw artifact, and enforce deterministic regression floors fitted to corpus v2.0: Top-1 ≥ 0.80, MRR ≥ 0.87, answer precision ≥ 0.58, answerable recall ≥ 0.78, and refusal recall ≥ 0.05. These are regression floors, not quality targets; the measured refusal behavior shows why future releases should raise them. Latency is reported but deliberately not gated on shared CI hardware.
 
 ## Repository layout
 

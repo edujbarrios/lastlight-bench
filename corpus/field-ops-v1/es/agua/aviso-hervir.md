@@ -1,6 +1,6 @@
 # Procedimiento 2.3 — Operaciones durante un aviso de hervir el agua
 
-**Documento sintético de ejercicio; no es orientación sanitaria.** ChatGPT inventó este procedimiento para simular un manual municipal y evaluar recuperación multilingüe.
+**Documento sintético de ejercicio; no es orientación sanitaria.** Simula un manual municipal para evaluar recuperación multilingüe y no debe utilizarse para tomar decisiones operativas.
 
 ## Activación y alcance
 
