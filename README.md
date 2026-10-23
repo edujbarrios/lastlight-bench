@@ -80,6 +80,8 @@ Lexical and BM25 score scales are strategy-specific and are never compared direc
 ## Reproduce
 
 ```bash
+git clone https://github.com/edujbarrios/lastlight-bench.git
+cd lastlight-bench
 python -m venv .venv
 python -m pip install -e ".[dev]"
 lastlight-bench-suite --output results/local.json
