@@ -12,11 +12,12 @@ license = {text = "MPL-2.0"}
 dependencies = ["lastlight==0.2.1"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0", "ruff>=0.8"]
+dev = ["pytest>=8.0,<9", "ruff==0.12.12"]
 
 [project.scripts]
 lastlight-bench = "lastlight_bench.cli:main"
 lastlight-bench-suite = "lastlight_bench.suite:main"
+lastlight-bench-gate = "lastlight_bench.gates:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
