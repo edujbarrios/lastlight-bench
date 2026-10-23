@@ -36,29 +36,29 @@ This is a closed-corpus retrieval benchmark. It does not score generated prose, 
 
 ## Baseline results
 
-LastLight 0.2.1, Python 3.12, Windows 11, `top_k=3`, three warm-up queries:
+LastLight 0.2.2, Python 3.12, Windows 11, `top_k=3`, three warm-up queries:
 
 | Strategy / mode | Top-1 | MRR | Answer precision | Answerable recall | Refusal recall | False accept | Mean ms | P95 ms | Peak MiB |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| lexical / balanced | 78.7% | 0.872 | 62.4% | 76.9% | 44.2% | 55.8% | 138.97 | 200.00 | 0.47 |
-| bm25 / balanced | 86.1% | 0.921 | 58.9% | 86.1% | 3.8% | 96.2% | 166.29 | 197.15 | 0.47 |
-| adaptive / survival | 78.7% | 0.866 | 62.4% | 76.9% | 44.2% | 55.8% | 157.48 | 170.21 | 0.47 |
-| adaptive / balanced | 83.3% | 0.910 | 57.3% | 83.3% | 5.8% | 94.2% | 164.53 | 179.14 | 0.47 |
-| adaptive / accuracy | 86.1% | 0.921 | 58.9% | 86.1% | 3.8% | 96.2% | 163.87 | 176.15 | 1.49 |
-| adaptive / balanced / 0.4 mWh | 78.7% | 0.866 | 62.4% | 76.9% | 44.2% | 55.8% | 157.52 | 170.23 | 0.47 |
-| adaptive / balanced / 64 MiB | 78.7% | 0.866 | 62.4% | 76.9% | 44.2% | 55.8% | 160.10 | 197.12 | 0.47 |
+| lexical / balanced | 77.8% | 0.867 | 80.5% | 64.8% | 88.5% | 11.5% | 217.82 | 335.96 | 0.73 |
+| bm25 / balanced | 86.1% | 0.921 | 92.9% | 48.1% | 100.0% | 0.0% | 195.65 | 253.27 | 0.73 |
+| adaptive / survival | 77.8% | 0.861 | 80.5% | 64.8% | 88.5% | 11.5% | 177.94 | 236.27 | 0.73 |
+| adaptive / balanced | 83.3% | 0.910 | 90.2% | 50.9% | 98.1% | 1.9% | 207.83 | 273.55 | 0.73 |
+| adaptive / accuracy | 86.1% | 0.921 | 92.7% | 47.2% | 100.0% | 0.0% | 220.94 | 277.22 | 0.73 |
+| adaptive / balanced / 0.4 mWh | 77.8% | 0.861 | 80.5% | 64.8% | 88.5% | 11.5% | 204.16 | 257.61 | 0.73 |
+| adaptive / balanced / 64 MiB | 77.8% | 0.861 | 80.5% | 64.8% | 88.5% | 11.5% | 212.07 | 265.49 | 0.73 |
 
-BM25 produces the strongest ranking and answerable recall, but accepts 50 of 52 unsupported queries. Its 96.2% false-accept rate shows that strong retrieval is not equivalent to reliable answer calibration. Lexical and survival policies refuse more unsupported prompts, at the cost of lower answerable recall.
+LastLight 0.2.2 fixes the major calibration failure observed in 0.2.1. BM25 now refuses all 52 unsupported queries, reducing false acceptance from 96.2% to 0%, while answer precision rises from 58.9% to 92.9%. The trade-off is deliberate but substantial: BM25 answerable recall falls from 86.1% to 48.1%. Lexical is less conservative, retaining 64.8% answerable recall with an 11.5% false-accept rate. The new policy strongly improves safety, but future calibration work should recover supported answers without reopening hard negatives.
 
 ### Bilingual retrieval
 
 | Configuration | English Top-1 | Spanish Top-1 | English answerable recall | Spanish answerable recall |
 |---|---:|---:|---:|---:|
-| lexical | 80.3% | 75.0% | 78.9% | 71.9% |
-| BM25 | 86.8% | 84.4% | 86.8% | 84.4% |
-| adaptive balanced | 84.2% | 81.2% | 84.2% | 81.2% |
+| lexical | 80.3% | 71.9% | 64.5% | 65.6% |
+| BM25 | 86.8% | 84.4% | 47.4% | 50.0% |
+| adaptive balanced | 84.2% | 81.2% | 48.7% | 56.2% |
 
-Spanish performance is lower but remains close to English performance. The gap is now visible because Spanish is represented by full-length competing manuals and hard negatives, rather than a few demonstration queries.
+Spanish ranking remains close to English ranking. Spanish answerable recall is slightly higher under the calibrated policies, while Spanish refusal recall ranges from 93.8% to 100%. The comparison is meaningful because Spanish is represented by full-length competing manuals and hard negatives, rather than a few demonstration queries.
 
 Host-sensitive latency and allocation values are descriptive, not universal product claims. The complete per-case artifact is committed at [`results/baseline.json`](results/baseline.json).
 
@@ -111,7 +111,7 @@ Every JSONL case declares `id`, `query`, `language`, `category`, `answerable`, `
 
 ## CI and regression policy
 
-Pull requests run unit and integration tests on Python 3.10–3.12 and execute the seven-condition matrix on Python 3.12. Corpus v3.0 regression floors are Top-1 ≥ 0.77, MRR ≥ 0.86, answer precision ≥ 0.57, answerable recall ≥ 0.75, and refusal recall ≥ 0.03. These are failure-detection floors, not quality targets. Latency is not gated on shared CI hardware.
+Pull requests run unit and integration tests on Python 3.10–3.12 and execute the seven-condition matrix on Python 3.12. For LastLight 0.2.2 and corpus v3.0, regression floors are Top-1 ≥ 0.77, MRR ≥ 0.86, answer precision ≥ 0.78, answerable recall ≥ 0.45, and refusal recall ≥ 0.85. These floors protect the new refusal behavior while allowing the documented strategy trade-off. They are failure-detection floors, not quality targets. Latency is not gated on shared CI hardware.
 
 ## License
 
