@@ -1,6 +1,6 @@
 # Water utility procedure 2.5 — Distribution flushing after pressure restoration
 
-**Synthetic exercise document. Not public-health guidance.** ChatGPT invented this procedure to create a realistic near-neighbor for the boil-advisory and chlorination documents. It must not be used to operate a water network.
+**Synthetic exercise document. Not public-health guidance.** This procedure creates a realistic near-neighbor for the boil-advisory and chlorination documents. It must not be used to operate a water network.
 
 ## Purpose and prerequisites
 

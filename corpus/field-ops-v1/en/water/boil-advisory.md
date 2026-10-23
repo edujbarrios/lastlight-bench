@@ -1,6 +1,6 @@
 # Water utility procedure 2.3 — Boil-water advisory operations
 
-**Synthetic exercise document. Not public-health guidance.** ChatGPT invented every organization, threshold context, role, and instruction in this corpus to resemble a controlled municipal manual for retrieval evaluation.
+**Synthetic exercise document. Not public-health guidance.** Every organization, threshold context, role, and instruction is fictional and exists only for retrieval evaluation.
 
 ## Trigger and authority
 
