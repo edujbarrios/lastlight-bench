@@ -111,10 +111,6 @@ tests/                 corpus, schema, metric, integration, and gate tests
 
 Every JSONL case declares `id`, `query`, `language`, `category`, `answerable`, `expected_path`, `difficulty`, and `tags`. Corpus changes and label changes therefore produce explicit reviewable diffs.
 
-## CI and regression policy
-
-Pull requests run unit and integration tests on Python 3.10–3.12 and execute the seven-condition matrix on Python 3.12. For LastLight 0.2.2 and corpus v3.0, regression floors are Top-1 ≥ 0.77, MRR ≥ 0.86, answer precision ≥ 0.78, answerable recall ≥ 0.45, and refusal recall ≥ 0.85. These floors protect the new refusal behavior while allowing the documented strategy trade-off. They are failure-detection floors, not quality targets. Latency is not gated on shared CI hardware.
-
 ## License
 
 Mozilla Public License 2.0. The synthetic corpus is marked CC0-1.0 in its pack manifest.
