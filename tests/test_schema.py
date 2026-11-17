@@ -10,13 +10,16 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_dataset_has_expected_balance_and_unique_ids() -> None:
     cases = load_cases(ROOT / "datasets" / "eval.jsonl")
-    assert len(cases) == 60
-    assert len({case.id for case in cases}) == 60
-    assert sum(case.answerable for case in cases) == 40
+    assert len(cases) == 102
+    assert len({case.id for case in cases}) == 102
+    assert sum(case.answerable for case in cases) == 82
     assert sum(not case.answerable for case in cases) == 20
     assert {case.language for case in cases} == {"es", "it"}
     assert sum(case.category == "unanswerable-in-domain" for case in cases) == 20
-    assert sum(case.language == "es" for case in cases) == 30
+    assert sum(case.language == "es" for case in cases) == 51
+    assert sum(case.difficulty == "multi-section" for case in cases) == 40
+    assert sum(case.difficulty == "clinical-scenario" for case in cases) == 2
+    assert sum("personalized-treatment" in case.tags for case in cases) == 20
     corpus = ROOT / "corpus" / "official-medicines-es-it"
     assert all(
         case.expected_path is None or (corpus / case.expected_path).is_file()

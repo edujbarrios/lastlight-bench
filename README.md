@@ -12,7 +12,7 @@ A reproducible benchmark for [LastLight](https://github.com/edujbarrios/lastligh
 The benchmark has four independently versioned layers:
 
 1. **Corpus:** 200 official medicine documents (10 per therapeutic category and language), 1,171,017 words, in Spanish and Italian.
-2. **Ground truth:** 60 labeled queries: 40 answerable active-ingredient lookups and 20 hard negatives requiring live pharmacy stock or personalized dosing.
+2. **Ground truth:** 102 labeled queries: 40 direct lookups, 40 multi-section prospectus questions, 2 multi-constraint clinical scenarios, and 20 personalized-treatment hard negatives.
 3. **Execution matrix:** lexical, BM25, and hybrid retrieval in balanced mode.
 4. **Evaluation:** per-query results, aggregate metrics, and slices by language, difficulty, category, and tag.
 
@@ -20,26 +20,32 @@ The benchmark corpus comes from [medicine-pack-extractor](https://github.com/edu
 
 ### Questions used by the benchmark
 
-The benchmark checks two different behaviors:
+The benchmark checks four different behaviors:
 
-- **Answerable retrieval questions:** ask for the active ingredient of a named medicine. The expected result is the exact product information document containing that medicine. Examples: `¿Cuál es el principio activo de ALKA-SELTZER 2,1 g COMPRIMIDOS EFERVESCENTES?` and `Qual è il principio attivo di MAGNESIA EFFERVESCENTE SELLA?`.
-- **Unanswerable hard negatives:** deliberately ask for information that is not contained in a static medicine pack, combining current pharmacy availability with personalized dosing. Examples: `¿Qué farmacia tiene hoy existencias y qué dosis debo tomar...?` and `Quale farmacia ha disponibilità oggi e quale dose devo assumere...?`. LastLight is expected to refuse these questions.
+- **Direct identification (40):** asks for the active ingredient of a named medicine. The expected result is the exact product information document. Examples: `¿Cuál es el principio activo de ALKA-SELTZER 2,1 g COMPRIMIDOS EFERVESCENTES?` and `Qual è il principio attivo di MAGNESIA EFFERVESCENTE SELLA?`.
+- **Multi-section prospectus reading (40):** asks the system to locate the document that must be reviewed for indications, contraindications, interactions, and precautions in special populations. These queries contain several clinical concepts instead of a single field lookup.
+- **Multi-constraint clinical scenarios (2):** combines a symptom, age restriction, active ingredients, and an interaction. For example, the Spanish case asks for the product sheet that combines acetylsalicylic acid, paracetamol, and caffeine when the patient is under 16 and uses methotrexate. The Italian case combines headache, warfarin, methotrexate, and 500 mg acetylsalicylic-acid tablets.
+- **Personalized-treatment hard negatives (20):** presents symptoms such as headache, sore throat with fever, shortness of breath, palpitations, or insomnia and asks which exact medicine and dose to take without providing age, history, allergies, diagnosis, or concomitant treatment. LastLight is expected to refuse rather than turn document retrieval into prescribing.
 
-The test does not evaluate generated medical advice. It evaluates whether LastLight retrieves the correct product sheet for supported questions and refuses requests that the package cannot safely support.
+The expected medicine in an answerable scenario is grounded in explicit constraints from its official product sheet, not inferred from the symptom alone. The test does not claim that this medicine is appropriate for a real person. It evaluates retrieval of the correct evidence document and safe refusal; it does not validate generated medical advice.
 
 ### Spanish benchmark
 
-The Spanish benchmark contains 100 CIMA/AEMPS medicine documents across 10 therapeutic categories and 30 queries:
+The Spanish benchmark contains 100 CIMA/AEMPS medicine documents across 10 therapeutic categories and 51 queries:
 
 - 20 answerable active-ingredient questions, covering two medicines from each category;
-- 10 unanswerable questions, one hard negative associated with each category.
+- 20 multi-section prospectus questions;
+- 1 multi-constraint analgesic scenario;
+- 10 personalized-treatment hard negatives, one associated with each category.
 
 ### Italian benchmark
 
-The Italian benchmark contains 100 AIFA medicine documents across the same 10 therapeutic categories and 30 queries:
+The Italian benchmark contains 100 AIFA medicine documents across the same 10 therapeutic categories and 51 queries:
 
 - 20 answerable active-ingredient questions, covering two medicines from each category;
-- 10 unanswerable questions, one hard negative associated with each category.
+- 20 multi-section prospectus questions;
+- 1 multi-constraint analgesic scenario;
+- 10 personalized-treatment hard negatives, one associated with each category.
 
 This is a closed-corpus retrieval benchmark. It does not assess the clinical truth or completeness of an answer, generated prose, or generalization to unrelated corpora.
 
@@ -63,27 +69,37 @@ LastLight 0.3.1, `top_k=3`, three warm-up queries:
 
 | Strategy / mode | Top-1 | MRR | Answer precision | Answerable recall | Refusal recall | False accept | Mean ms | P95 ms |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| lexical / balanced | 95.0% | 0.975 | 100.0% | 50.0% | 100.0% | 0.0% | 8,938.48 | 11,621.36 |
-| bm25 / balanced | 97.5% | 0.975 | 95.5% | 52.5% | 100.0% | 0.0% | 5,065.24 | 11,276.39 |
-| hybrid / balanced | 97.5% | 0.975 | 100.0% | 52.5% | 100.0% | 0.0% | 7,514.31 | 11,730.93 |
+| lexical / balanced | 95.1% | 0.963 | 100.0% | 31.7% | 100.0% | 0.0% | 3,005.29 | 4,621.81 |
+| bm25 / balanced | 86.6% | 0.925 | 95.7% | 26.8% | 100.0% | 0.0% | 4,385.16 | 6,819.05 |
+| hybrid / balanced | 96.3% | 0.970 | 100.0% | 25.6% | 100.0% | 0.0% | 5,323.52 | 12,633.43 |
 
-All strategies refused every hard negative. BM25 and hybrid reached the best Top-1 and answerable recall; lexical and hybrid had no incorrect accepted answers. The full official pack also exposes a substantial latency increase compared with the previous small synthetic corpus.
+All strategies refused every underspecified request for a personalized medicine and dose. Hybrid achieved the best ranking, while lexical retained the highest answerable recall and perfect precision. The gap between high Top-1 ranking and low answerable recall is meaningful: LastLight often finds the right product sheet but refuses to accept its own evidence when the question spans multiple prospectus sections.
+
+### Results by question complexity
+
+| Strategy | Direct Top-1 / recall | Multi-section Top-1 / recall | Clinical scenario Top-1 / recall | Hard-negative refusal |
+|---|---:|---:|---:|---:|
+| lexical | 95.0% / 50.0% | 100.0% / 15.0% | 0.0% / 0.0% | 100.0% |
+| BM25 | 97.5% / 52.5% | 75.0% / 0.0% | 100.0% / 50.0% | 100.0% |
+| hybrid | 97.5% / 52.5% | 100.0% / 0.0% | 0.0% / 0.0% | 100.0% |
+
+This slice exposes the main regression target. Multi-section prompts are usually ranked correctly by lexical and hybrid retrieval, but calibration rejects nearly all of them. BM25 is the only strategy that accepts one of the two multi-constraint clinical scenarios.
 
 ### Spanish benchmark results
 
 | Strategy | Top-1 | Answer precision | Answerable recall | Refusal recall |
 |---|---:|---:|---:|---:|
-| lexical | 90.0% | 100.0% | 90.0% | 100.0% |
-| BM25 | 95.0% | 92.9% | 65.0% | 100.0% |
-| hybrid | 95.0% | 100.0% | 75.0% | 100.0% |
+| lexical | 92.7% | 100.0% | 58.5% | 100.0% |
+| BM25 | 95.1% | 93.3% | 34.1% | 100.0% |
+| hybrid | 95.1% | 100.0% | 36.6% | 100.0% |
 
 ### Italian benchmark results
 
 | Strategy | Top-1 | Answer precision | Answerable recall | Refusal recall |
 |---|---:|---:|---:|---:|
-| lexical | 100.0% | 100.0% | 10.0% | 100.0% |
-| BM25 | 100.0% | 100.0% | 40.0% | 100.0% |
-| hybrid | 100.0% | 100.0% | 30.0% | 100.0% |
+| lexical | 97.6% | 100.0% | 4.9% | 100.0% |
+| BM25 | 78.0% | 100.0% | 19.5% | 100.0% |
+| hybrid | 97.6% | 100.0% | 14.6% | 100.0% |
 
 Ranking is strong in both languages, while acceptance is much more conservative for Italian. This gap is visible rather than hidden by the aggregate score. The complete per-case artifact, including both language slices, is committed at [`results/baseline.json`](results/baseline.json).
 
