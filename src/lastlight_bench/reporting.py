@@ -41,8 +41,8 @@ def corpus_stats(corpus: Path) -> dict[str, int]:
 
 def markdown_table(results: list[dict[str, object]]) -> str:
     lines = [
-        "| Strategy / mode | Top-1 | MRR | Answer precision | Answerable recall | Refusal recall | False accept | Mean ms | P95 ms | Peak MiB |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "| Strategy / mode | Top-1 | MRR | Answer precision | Answerable recall | Refusal recall | False accept | Mean ms | P95 ms |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for result in results:
         config, summary = result["configuration"], result["summary"]
@@ -55,8 +55,7 @@ def markdown_table(results: list[dict[str, object]]) -> str:
             f"| {label} | {summary['top1_accuracy']:.1%} | {summary['mrr']:.3f} | "
             f"{summary['answer_precision']:.1%} | {summary['answerable_recall']:.1%} | "
             f"{summary['refusal_recall']:.1%} | {summary['false_accept_rate']:.1%} | "
-            f"{summary['latency_ms_mean']:.2f} | {summary['latency_ms_p95']:.2f} | "
-            f"{summary['peak_memory_mib']:.2f} |"
+            f"{summary['latency_ms_mean']:.2f} | {summary['latency_ms_p95']:.2f} |"
         )
     return "\n".join(lines)
 

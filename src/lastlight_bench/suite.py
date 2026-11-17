@@ -13,11 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 CONFIGURATIONS = (
     {"strategy": "lexical", "mode": "balanced"},
     {"strategy": "bm25", "mode": "balanced"},
-    {"strategy": "adaptive", "mode": "survival"},
-    {"strategy": "adaptive", "mode": "balanced"},
-    {"strategy": "adaptive", "mode": "accuracy"},
-    {"strategy": "adaptive", "mode": "balanced", "energy_budget_mwh": 0.4},
-    {"strategy": "adaptive", "mode": "balanced", "memory_budget_mb": 64},
+    {"strategy": "hybrid", "mode": "balanced"},
 )
 
 
@@ -26,7 +22,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output", type=Path, default=ROOT / "results" / "baseline.json")
     parser.add_argument("--warmup", type=int, default=3)
     args = parser.parse_args(argv)
-    corpus = ROOT / "corpus" / "field-ops-v1"
+    corpus = ROOT / "corpus" / "official-medicines-es-it"
     cases = ROOT / "datasets" / "eval.jsonl"
     results = []
     for configuration in CONFIGURATIONS:
@@ -40,7 +36,12 @@ def main(argv: list[str] | None = None) -> int:
     artifact = {
         "schema_version": 1,
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "dataset": {"synthetic": True, **corpus_stats(corpus), "cases": len(results[0]["cases"])},
+        "dataset": {
+            "synthetic": False,
+            "source": "medicine-pack-extractor@2d10e489dbe602ecf7cae36dd0fd3a668155f542",
+            **corpus_stats(corpus),
+            "cases": len(results[0]["cases"]),
+        },
         "runs": results,
         "markdown": markdown_table(results),
     }

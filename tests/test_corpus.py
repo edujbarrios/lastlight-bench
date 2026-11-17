@@ -3,22 +3,26 @@ import json
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CORPUS = ROOT / "corpus" / "field-ops-v1"
+CORPUS = ROOT / "corpus" / "official-medicines-es-it"
 
 
-def test_corpus_is_substantial_and_explicitly_synthetic() -> None:
+def test_corpus_has_ten_official_medicines_per_category_and_language() -> None:
     documents = list(CORPUS.rglob("*.md"))
-    assert len(documents) == 32
-    assert sum(len(path.read_text(encoding="utf-8").split()) for path in documents) >= 15_500
+    assert len(documents) == 200
+    counts: dict[tuple[str, str], int] = {}
     for document in documents:
-        text = document.read_text(encoding="utf-8").lower()
-        assert len(text.split()) >= 400, document
-        assert "synthetic" in text or "sintético" in text, document
+        language, category = document.relative_to(CORPUS).parts[:2]
+        counts[(language, category)] = counts.get((language, category), 0) + 1
+    assert set(language for language, _ in counts) == {"es", "it"}
+    assert len(counts) == 20
+    assert set(counts.values()) == {10}
 
 
-def test_manifest_declares_synthetic_source_and_languages() -> None:
+def test_manifest_declares_official_sources_languages_and_provenance() -> None:
     manifest = json.loads((CORPUS / "lastlight-pack.json").read_text(encoding="utf-8"))
-    assert manifest["source"].startswith("synthetic://lastlight-bench/")
-    assert manifest["languages"] == ["en", "es"]
-    assert manifest["version"] == "3.0.0"
+    assert "cima.aemps.es" in manifest["source"]
+    assert "medicinali.aifa.gov.it" in manifest["source"]
+    assert manifest["languages"] == ["es", "it"]
+    assert manifest["version"] == "0.2.0"
+    assert len(manifest["provenance"]) == 200
 

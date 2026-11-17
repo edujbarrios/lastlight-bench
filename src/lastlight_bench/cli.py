@@ -11,9 +11,13 @@ ROOT = Path(__file__).resolve().parents[2]
 
 def parser() -> argparse.ArgumentParser:
     value = argparse.ArgumentParser(description="Benchmark LastLight retrieval and refusal behavior")
-    value.add_argument("--corpus", type=Path, default=ROOT / "corpus" / "field-ops-v1")
+    value.add_argument(
+        "--corpus", type=Path, default=ROOT / "corpus" / "official-medicines-es-it"
+    )
     value.add_argument("--cases", type=Path, default=ROOT / "datasets" / "eval.jsonl")
-    value.add_argument("--strategy", choices=("lexical", "bm25", "adaptive"), default="adaptive")
+    value.add_argument(
+        "--strategy", choices=("lexical", "bm25", "hybrid", "adaptive"), default="adaptive"
+    )
     value.add_argument("--mode", choices=("survival", "balanced", "accuracy"), default="balanced")
     value.add_argument("--top-k", type=int, default=3)
     value.add_argument("--warmup", type=int, default=3)

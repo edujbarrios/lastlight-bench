@@ -1,0 +1,1417 @@
+{
+  "format_version": 1,
+  "name": "Official Medicines ES-IT",
+  "version": "0.2.0",
+  "description": "Official medicine product information prepared for offline retrieval research.",
+  "languages": [
+    "es",
+    "it"
+  ],
+  "license": "Source data terms apply; extractor code is MPL-2.0",
+  "source": "https://cima.aemps.es/ | https://medicinali.aifa.gov.it/",
+  "publisher": "AEMPS and AIFA; assembled by medicine-pack-extractor",
+  "published_at": "2026-10-30",
+  "generated_on": "2026-10-30",
+  "provenance": [
+    {
+      "path": "es/analgesics/42956-a-a-s-500-mg-comprimidos.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/42956/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "73c61f030400c0548def91e4ae9dd6d0aa6c42bddd4da671ec0e7b225732d447"
+    },
+    {
+      "path": "es/analgesics/47178-actron-compuesto-267-mg-133-mg-40-mg-comprimidos-efervescentes.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/47178/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "edac73e81d3044522b783460bb85020341844cb6e7860b36cc80b8cbf220de63"
+    },
+    {
+      "path": "es/analgesics/61784-adolonta-retard-100-mg-comprimidos-de-liberacion-prolongada.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/61784/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "19683534de45cdec5499156794c9015751065b045da632508e42d4077ddffc27"
+    },
+    {
+      "path": "es/analgesics/61785-adolonta-retard-150-mg-comprimidos-de-liberacion-prolongada.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/61785/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "f768918809a866f120fc61bda81cf7f09c17573795e4e68fd34415cbb88dc28a"
+    },
+    {
+      "path": "es/analgesics/61786-adolonta-retard-200-mg-comprimidos-de-liberacion-prolongada.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/61786/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6c9293fb5a70fa8b70d40ebfab013a8c017b6f3ad9465cfabab5a30253ed2d32"
+    },
+    {
+      "path": "es/analgesics/68570-adolonta-retard-50-mg-comprimidos-de-liberacion-prolongada.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/68570/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "11dc807e687d6b78f33f0063f14d74470bde4c141b8fc4914c42c7654db6f8d1"
+    },
+    {
+      "path": "es/analgesics/61617-adolonta-100-mg-ml-solucion-oral.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/61617/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "28ed8b0a53abfe4eebf573354d8f792f11374a715bfb545a6ea1a599584a0e7a"
+    },
+    {
+      "path": "es/analgesics/59086-adolonta-100-mg-2-ml-solucion-inyectable-y-para-perfusion.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/59086/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "843fffbf268df7e27b51379222a96e3b6583e63ff82a2c6a336d6bd1f205ecda"
+    },
+    {
+      "path": "es/analgesics/59088-adolonta-50-mg-capsulas-duras.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/59088/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "035db9f00a34b4844ed59267c7bad01afdf051eb87c15df65e8bb1ae7585d755"
+    },
+    {
+      "path": "es/analgesics/78686-almotriptan-cinfa-12-5-mg-comprimidos-recubiertos-con-pelicula-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/78686/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6c9a6a4a99591efb47693b522fd2180bb7f1744fcf5005bdbe2821f985f9882a"
+    },
+    {
+      "path": "es/antibacterials/57012-amikacina-normon-500-mg-2-ml-solucion-inyectable-y-para-perfusion-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/57012/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "71882d53c42c6488c53c711c435f287a4eb6019d4336bd7798c7ece57695734d"
+    },
+    {
+      "path": "es/antibacterials/62800-amoxicilina-acido-clavulanico-sandoz-250-mg-62-5-mg-5-ml-polvo-para-suspension-o.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62800/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "efb2777de8a304a3afdba758a912b60c053de8d8b16596dbaa9364e59a260663"
+    },
+    {
+      "path": "es/antibacterials/62880-amoxicilina-cinfa-1000-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62880/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "639a9f180c3bd0157ecf9c929e92553e1e3a2ea9c299f1240f75f583d0fc60a3"
+    },
+    {
+      "path": "es/antibacterials/64117-amoxicilina-cinfa-1000-mg-polvo-para-suspension-oral-en-sobres-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/64117/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "5040ebce8a409a8350f7e93f63a3fa1a579840fd0adf229c805be835d22f9277"
+    },
+    {
+      "path": "es/antibacterials/62586-amoxicilina-cinfa-500-mg-capsulas-duras-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62586/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b13a7efa87f1261583bbcd3695320011e3f3622467abd1b4c8297352f437d28e"
+    },
+    {
+      "path": "es/antibacterials/66252-amoxicilina-cinfa-500-mg-polvo-para-suspension-oral-en-sobres-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/66252/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "7e26b2ffa6e9601d2cfaccc04c107e9042e27e1c7d01a0ed219f40c579b3c4ee"
+    },
+    {
+      "path": "es/antibacterials/64390-amoxicilina-normon-1000-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/64390/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "368357e1735836f4c47c784f38e24d03cdf7f5df39fcdb1e184376ad00a2e9d5"
+    },
+    {
+      "path": "es/antibacterials/62784-amoxicilina-normon-1000-mg-polvo-para-suspension-oral-en-sobres-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62784/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "363b2b236d6b1d8fa4db0b042d9353a9c8c7c96b05d16ff179efd39a250cf1a2"
+    },
+    {
+      "path": "es/antibacterials/62786-amoxicilina-normon-250-mg-polvo-para-suspension-oral-en-sobre-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62786/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "2267c89d1d37a640a1d9afb5bdda508c531c38ffd2ef9775900c94eba5173645"
+    },
+    {
+      "path": "es/antibacterials/63354-amoxicilina-normon-250-mg-5-ml-polvo-para-suspension-oral-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63354/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "fa1bc6e609caeeecff346bd1611f80429b980647934e9f648aaaba1acacdd179"
+    },
+    {
+      "path": "es/antidiabetics/70452-acarbosa-tecnigen-100-mg-comprimidos.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/70452/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b115b4586096d90a9266a0d2e4d556076da0155d04ec07394cf227f25b48a71f"
+    },
+    {
+      "path": "es/antidiabetics/70451-acarbosa-tecnigen-50-mg-comprimidos.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/70451/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "8766af7ece8da06b88c39a6a32e375fba1f916ee27b1794ac22884bacb01c276"
+    },
+    {
+      "path": "es/antidiabetics/02230003-actrapid-100-ui-ml-solucion-inyectable-en-un-vial.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/02230003/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "f20aad7869e7ab1460041e46b1a01a85172ffcaf240263683fa9ff4ea7a1d39f"
+    },
+    {
+      "path": "es/antidiabetics/63644-diamicron-30-mg-comprimidos-de-liberacion-modificada.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63644/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "ba4be4514e74a9b5a4b7be52c1bc45d5229e1e5075b86b404c884d26c2e4762c"
+    },
+    {
+      "path": "es/antidiabetics/71738-diamicron-60-mg-comprimidos-de-liberacion-modificada.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/71738/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "2329f3bb81257f3b29c885871ceaa3b78d49d72322d18a332d78b488767cfbb8"
+    },
+    {
+      "path": "es/antidiabetics/55211-dianben-850-mg-comprimidos-recubiertos-con-pelicula.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/55211/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "f2d56bce8df9103f136d7a0050868435ea8f92ced7e420b584a68a6dc124d7c8"
+    },
+    {
+      "path": "es/antidiabetics/1151051009-ebymect-5-mg-1-000-mg-comprimidos-recubiertos-con-pelicula.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/1151051009/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "d8271217b8f761cff41365d6c9999881cc3a42913b46313203322b35252910bd"
+    },
+    {
+      "path": "es/antidiabetics/1151051003-ebymect-5-mg-850-mg-comprimidos-recubiertos-con-pelicula.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/1151051003/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "ffb7bc5b8167f6651337b7ac872d003ab3e913ab61d43ac3403aa61f5f67ca4d"
+    },
+    {
+      "path": "es/antidiabetics/1151052007-edistride-10-mg-comprimidos-recubiertos-con-pelicula.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/1151052007/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "1c0e74182730987f662505dddb444ddf323a0fe75e3865611eef2c052630ef36"
+    },
+    {
+      "path": "es/antidiabetics/08457010-efficib-50-mg-1000-mg-comprimidos-recubiertos-con-pelicula.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/08457010/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "46669933cd6199fa8ce497914e12ef1df902c6f3a10833c3a70026969cf6e9c0"
+    },
+    {
+      "path": "es/acid-disorders/40876-alka-seltzer-2-1-g-comprimidos-efervescentes.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/40876/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "4f8c320a122e28c4f9e605f6df397cbd1f5c38d43a6e78e098c26baf97afaa56"
+    },
+    {
+      "path": "es/acid-disorders/85630-almagato-stadapharm-1-5-g-suspension-oral.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/85630/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6f24b2482a965ea49221cd61228def3c7f0cb360276ba6dbe89fea53e36bb40c"
+    },
+    {
+      "path": "es/acid-disorders/85561-almagato-stadapharm-500-mg-comprimidos-masticables.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/85561/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "d780e057a4c64c74fdcd625dc51f5345dbb8f2e275f1f1b99a87ac24712654f6"
+    },
+    {
+      "path": "es/acid-disorders/63940-axiago-20-mg-comprimidos-gastrorresistentes.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63940/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "919d252c61adb62f9ddaa58b88d701143dcaf2cc0f329681eb593c2aedb0dd61"
+    },
+    {
+      "path": "es/acid-disorders/63944-axiago-40-mg-comprimidos-gastrorresistentes.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63944/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "940f7d0e7d0ea0c0928f5b3add4b7205d2a67dfd0730897c04c175e4a77e9b50"
+    },
+    {
+      "path": "es/acid-disorders/58403-cytotec-200-microgramos-comprimidos.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/58403/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "498ab1b277a453081f96b78c4b8fa509f7146d5ba810a5f65568498ce50c6a99"
+    },
+    {
+      "path": "es/acid-disorders/82921-esomeprazol-cinfa-20-mg-capsulas-duras-gastrorresistentes-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/82921/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "33185980dc31b5b232387bc25842d0525e9efc0da765a56ed9b28877c8f2334d"
+    },
+    {
+      "path": "es/acid-disorders/75071-esomeprazol-cinfa-20-mg-comprimidos-gastrorresistentes-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/75071/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "dfff16b0da2af2807d7c3b89b7be1bceccbde77479c230f7bcaa9dd4ee22ed67"
+    },
+    {
+      "path": "es/acid-disorders/82922-esomeprazol-cinfa-40-mg-capsulas-duras-gastrorresistentes-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/82922/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "c183c3a0f1e963d1789cd739892027070f54e400755fdaf10b7e6fecea85d78c"
+    },
+    {
+      "path": "es/acid-disorders/75074-esomeprazol-cinfa-40-mg-comprimidos-gastrorresistentes-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/75074/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "cdecd7007428cc8da298b478297d9818b522d2c40caea331aa09d0755ebe3982"
+    },
+    {
+      "path": "es/antithrombotics/42991-a-a-s-100-mg-comprimidos.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/42991/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "d4e9e994d98941f28a0f42c6a55e3d94568081a23ba63f90159d048bebc71542"
+    },
+    {
+      "path": "es/antithrombotics/76287-acido-acetilsalicilico-cinfamed-100-mg-comprimidos-gastrorresistentes-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/76287/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "0fe9e5bd1f2c30095181375031e7a6897895e45a6c2d00341c8eb23f20c76e5d"
+    },
+    {
+      "path": "es/antithrombotics/76237-acido-acetilsalicilico-stada-100-mg-comprimidos-gastrorresistentes-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/76237/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "89b9c39f8a6fd46eb560bf38d962906d57b1626c1af2ebeace671eebe23a7fe3"
+    },
+    {
+      "path": "es/antithrombotics/81214-acido-acetilsalicilico-tarbis-100-mg-comprimidos-gastrorresistentes-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/81214/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "63c3aa925207c82ca0c4cd4b81b5131dc1e4f97cdfe41a92e5c246c7de081642"
+    },
+    {
+      "path": "es/antithrombotics/86705-acido-acetilsalicilico-tecnigen-100-mg-comprimidos-gastrorresistentes.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/86705/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b6b811d644794c81cbf82e95d8a7a1f5f2eda512753163482381b9e6eb6183e3"
+    },
+    {
+      "path": "es/antithrombotics/59494-actilyse-polvo-y-disolvente-para-solucion-inyectable-y-para-perfusion.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/59494/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "0591b3eaa12b02504bb015d244b29907d7120723f868f2adcf0386c934e651ba"
+    },
+    {
+      "path": "es/antithrombotics/62825-adiro-100-mg-comprimidos-gastrorresistentes-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62825/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b505e83b39bef07ba736d4ab918864174156a95160356e19051d981aff4d18d4"
+    },
+    {
+      "path": "es/antithrombotics/110655009-brilique-60-mg-comprimidos-recubiertos-con-pelicula.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/110655009/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "becdc6037309ab726330e2b5c68dd2a22ad21c5c0a6a759f81835e2cb2c6004a"
+    },
+    {
+      "path": "es/antithrombotics/110655013-brilique-90-mg-comprimidos-bucodispersables.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/110655013/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b85fda2c596a89781b89860c0a982085d5d42b22950eeed2fb8f0fe2f8a53a6b"
+    },
+    {
+      "path": "es/antithrombotics/10655004-brilique-90-mg-comprimidos-recubiertos-con-pelicula.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/10655004/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "57ff7108f1192f2ab938d96a0316f99600679a5c7ceff0b7528498e5e5e4ee35"
+    },
+    {
+      "path": "es/beta-blockers/63146-atenolol-cinfa-100-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63146/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "1f16ad9ffdc951f2c1df0a8203a7a23ce975e8ccab3c7fd4ea0b68e1c2aac412"
+    },
+    {
+      "path": "es/beta-blockers/63147-atenolol-cinfa-50-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63147/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "9b286ac425830ed31b76fc8b14b56f36bdb50d68e046aa2aefb6664186ae5cb3"
+    },
+    {
+      "path": "es/beta-blockers/61493-atenolol-normon-100-mg-comprimidos-recubiertos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/61493/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "ff1ec2f2ac4a0c943bf1d101d8dfcbff44ae9d2de6f9dd9ffc9cfadbf3b954f4"
+    },
+    {
+      "path": "es/beta-blockers/61492-atenolol-normon-50-mg-comprimidos-recubiertos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/61492/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b54577f0f333109da4b18896eb514f5f2bb0c441c78ad0440eea025d2929e8bb"
+    },
+    {
+      "path": "es/beta-blockers/62450-atenolol-sandoz-100-mg-comprimidos-recubiertos-con-pelicula-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62450/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "bab62f8e39325b16c8076638393c57acea0ce2742ec4851ec885953c9100c995"
+    },
+    {
+      "path": "es/beta-blockers/62449-atenolol-sandoz-50-mg-comprimidos-recubiertos-con-pelicula-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62449/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "78cba76dfd2053ca84e369a8caad1feb44ff8c41282b9b97a1b4143e18e600c5"
+    },
+    {
+      "path": "es/beta-blockers/78905-bisoprolol-cinfa-10-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/78905/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "0d029b7fba7468804798819c6a033ddd992ebf2c7c9f95917f57532833a39e9c"
+    },
+    {
+      "path": "es/beta-blockers/87952-bisoprolol-cinfa-1-25-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/87952/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "03f7f3fcd9646d024b77587549d76ba93a34501d22c58a15bd2f338a72357a29"
+    },
+    {
+      "path": "es/beta-blockers/78904-bisoprolol-cinfa-2-5-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/78904/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "fdc2a297becffa9e670781ee08e170f3b377d39c46174554cce116f719cc4342"
+    },
+    {
+      "path": "es/beta-blockers/78903-bisoprolol-cinfa-5-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/78903/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "c5e211ffddffbb10c8c502ef48b0fb755bbfcd65f6ff65aaeca55072fde4d62c"
+    },
+    {
+      "path": "es/systemic-corticosteroids/52105-actocortina-373-mg-polvo-para-solucion-inyectable.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/52105/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "7a8dcaca7267af3c4614fe7766d0b416dc8faffbb6e61c6f07ec45c41c0b60bd"
+    },
+    {
+      "path": "es/systemic-corticosteroids/40628-celestone-cronodose-suspension-inyectable.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/40628/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "5f5ce3d6f1851b4ea9de4e897cf91bbc51f27f1f5f0357045e363311de500d50"
+    },
+    {
+      "path": "es/systemic-corticosteroids/73873-deflazacort-cinfa-30-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/73873/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "88ee91af268a61e0f6c7964fdadb741535c534cd3359cfd191dd74f9a2cf1043"
+    },
+    {
+      "path": "es/systemic-corticosteroids/73872-deflazacort-cinfa-6-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/73872/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "58a1dfabe15b92e16390d03c6e24d4da02293209ae3ea06498280bb15d343525"
+    },
+    {
+      "path": "es/systemic-corticosteroids/73850-deflazacort-normon-30-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/73850/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "8240ceb625d9e052f965b7c9e135966f4384b35d5676d687d4479976a7adc0ad"
+    },
+    {
+      "path": "es/systemic-corticosteroids/73849-deflazacort-normon-6-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/73849/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "bc331c003003613a371e062c700b18131d4a4b5d78a0586b573bb36e140ac7ff"
+    },
+    {
+      "path": "es/systemic-corticosteroids/90505-hidrocortisona-normon-100-mg-polvo-y-disolvente-para-solucion-inyectable-y-para-.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/90505/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "a6ccd721c7503f4d71fdcaa68c583f23906bd1efcb3b7e957bedbfc6e7d3da9e"
+    },
+    {
+      "path": "es/systemic-corticosteroids/71864-metilprednisolona-normon-20-mg-polvo-y-disolvente-para-solucion-inyectable-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/71864/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "10baa894a00dfd1dc5c98884977844924610b1e8675e5b6aad1eb5ad3e81553e"
+    },
+    {
+      "path": "es/systemic-corticosteroids/71866-metilprednisolona-normon-40-mg-polvo-y-disolvente-para-solucion-inyectable-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/71866/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "faf6e5581918a1c796f60f5347e86e4a5d469b648d590269d513f366c6616f14"
+    },
+    {
+      "path": "es/systemic-corticosteroids/75649-prednisona-cinfa-10-mg-comprimidos.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/75649/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "d389e316367efa85b723df0752c354c63d3ef3fc04ebb402d732a5e25ad5a6e9"
+    },
+    {
+      "path": "es/antiinflammatories/69223-aceclofenaco-cinfa-100-mg-comprimidos-recubiertos-con-pelicula-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/69223/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "a2630a3db719cc87a2be020ff7fb0db8736c3b00b786a5dce456b4624542e293"
+    },
+    {
+      "path": "es/antiinflammatories/71437-aceclofenaco-normon-100-mg-comprimidos-recubiertos-con-pelicula-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/71437/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "328a2b0c9f177863dcaae0617c04685b94ea753a3c727887b8142b4a4c58c150"
+    },
+    {
+      "path": "es/antiinflammatories/79696-aceclofenaco-stada-100-mg-comprimidos-recubiertos-con-pelicula-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/79696/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "096b9573f52bed5fb96ef9086619845dfdc5f7a48438c0dcb317fd7d67240c2c"
+    },
+    {
+      "path": "es/antiinflammatories/71590-acoxxel-120-mg-comprimidos-recubiertos-con-pelicula.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/71590/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "4dd83a3422c039f821834d319dd3b765e3951d4deb3575fbb3786f686866b177"
+    },
+    {
+      "path": "es/antiinflammatories/71587-acoxxel-30-mg-comprimidos-recubiertos-con-pelicula.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/71587/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "391590e13d94f473aff17682493b744f2212e5362a10a179c3b237fccf33cc1f"
+    },
+    {
+      "path": "es/antiinflammatories/71588-acoxxel-60-mg-comprimidos-recubiertos-con-pelicula.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/71588/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "33c8682cbccaea3ec540bc615e157156c1f2597218197f79fe3a34e55f705621"
+    },
+    {
+      "path": "es/antiinflammatories/71589-acoxxel-90-mg-comprimidos-recubiertos-con-pelicula.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/71589/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "f966b3895d33c015ea7bd4ff8ea17e1a6b837eecfe9686f2353fbd1b2ce0a1c5"
+    },
+    {
+      "path": "es/antiinflammatories/83348-actromadol-660-mg-comprimidos-de-liberacion-modificada.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/83348/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "45fa1944bad92b09bf2bd6d75389a2f933a046f8ed0e2c6fd3a58de22b80766a"
+    },
+    {
+      "path": "es/antiinflammatories/77395-adolquir-25-mg-comprimidos-recubiertos-con-pelicula-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/77395/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "c07cc8e3e875aacda8348f0ec6705f306dc587a62bc8ae22014bb0a3c916da3d"
+    },
+    {
+      "path": "es/antiinflammatories/77394-adolquir-25-mg-granulado-para-solucion-oral-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/77394/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "c8adfc9d3069adecadb038970f87265063af9c6a5f0b9528a2ce3a3f985d1ea5"
+    },
+    {
+      "path": "es/psycholeptics/113823002-adasuve-9-1-mg-polvo-para-inhalacion-unidosis.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/113823002/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "1634d99ffcc3cfaacf27ee4be291796d4beb188310ff14c4122c6c76f35da3d7"
+    },
+    {
+      "path": "es/psycholeptics/64214-alprazolam-cinfa-0-25-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/64214/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "07b0103429a64dec498349f6e6cdb1f3618365da5a2f13fc515a3b0d7e4e8158"
+    },
+    {
+      "path": "es/psycholeptics/62791-alprazolam-cinfa-0-5-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62791/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "e2c3a1f692f00e75189aaea74a9366b49f08e5fb6cabc55232c524005ca21f44"
+    },
+    {
+      "path": "es/psycholeptics/62789-alprazolam-cinfa-2-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62789/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "d14df0bfcd7e0e779ad03744d06d278976d2019eaa44e98f8d6dcc9510d3835f"
+    },
+    {
+      "path": "es/psycholeptics/62790-alprazolam-cinfa-1-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62790/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "9209dde70ca1b32a19f67b899b0e36d752f838f687e581c5bae4555a57fb0259"
+    },
+    {
+      "path": "es/psycholeptics/63247-alprazolam-normon-0-25-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63247/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6b04a1257c9beadda373f875ff7ebf2fe13d0bbd342775208b02d7f2f9842be1"
+    },
+    {
+      "path": "es/psycholeptics/63246-alprazolam-normon-0-5-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63246/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "a2d3a8cdbe2d8afd36354a94b82de2e2993add0bc1f1f82af846f5018980de10"
+    },
+    {
+      "path": "es/psycholeptics/63248-alprazolam-normon-1-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63248/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "2b59e801a43521381313b6abe1ce7b809044f2c020c674ebf74271d0429c9ebc"
+    },
+    {
+      "path": "es/psycholeptics/63249-alprazolam-normon-2-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63249/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "63f2baf6667476721907d94ef58b98e41baa7430d1d369ac5d957290b8a4b3f8"
+    },
+    {
+      "path": "es/psycholeptics/61880-alprazolam-sandoz-0-25-mg-comprimidos-efg.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/61880/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "df96c3945a1fae24101fe31beac7d3eabbd81ccb647a9418f09e3ce8c64b508e"
+    },
+    {
+      "path": "es/obstructive-airway/80248-airflusal-forspiro-50-microgramos-250-microgramos-inhalacion-polvo-para-inhalaci.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/80248/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "cd07c441e3cb8ca80ac010d95bad8262c323448a9e72ec9b2dad3a0c0e67f145"
+    },
+    {
+      "path": "es/obstructive-airway/80249-airflusal-forspiro-50-microgramos-500-microgramos-inhalacion-polvo-para-inhalaci.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/80249/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "2f1c5eb71212f0c0aa06df4c4c6a0f76edbb9cfea96e2e5828267e81fee77902"
+    },
+    {
+      "path": "es/obstructive-airway/62839-anasma-accuhaler-50-microgramos-100-microgramos-inhalacion-polvo-para-inhalacion.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62839/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "193b03232cebbcf9bda166ddbc822e1c767c19a38328c4ccdb41702412f654e4"
+    },
+    {
+      "path": "es/obstructive-airway/62840-anasma-accuhaler-50-microgramos-250-microgramos-inhalacion-polvo-para-inhalacion.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62840/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "2bf019e4dc9e5eaa824bd06e99f94a7ac6fec521c86296fb120d1db9ab891f27"
+    },
+    {
+      "path": "es/obstructive-airway/62841-anasma-accuhaler-50-microgramos-500-microgramos-inhalacion-polvo-para-inhalacion.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/62841/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "f26c5d5ad29de3d0462632e1d151030576cef070fc44fcb90719530bba75bd63"
+    },
+    {
+      "path": "es/obstructive-airway/63924-anasma-25-microgramos-125-microgramos-inhalacion-suspension-para-inhalacion-en-e.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63924/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "5482ae658e945b0a19321bb887e6c069d4e8b13ee3be4c359142f2a0e72708f2"
+    },
+    {
+      "path": "es/obstructive-airway/63925-anasma-25-microgramos-250-microgramos-inhalacion-suspension-para-inhalacion-en-e.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63925/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "379c0422bcb9a2100b1f55442bcf3abbaeb72ecb9acff6ef7c3874f1eaf331cd"
+    },
+    {
+      "path": "es/obstructive-airway/63923-anasma-25-microgramos-50-microgramos-inhalacion-suspension-para-inhalacion-en-en.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/63923/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b316d0d953297740efa7c32125e7cbc7fd08ce20d3fd9ebd809a3538777d9aeb"
+    },
+    {
+      "path": "es/obstructive-airway/113898002-anoro-ellipta-55-mcg-22-mcg-polvo-para-inhalacion-unidosis.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/113898002/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "d33c79b5f1e294727d6d7f78c9d0081b9f7e771e6ed907c265d0c7001638aef9"
+    },
+    {
+      "path": "es/obstructive-airway/65226-asmanex-twisthaler-200-microgramos-polvo-para-inhalacion.md",
+      "source": "https://cima.aemps.es/cima/dochtml/ft/65226/FichaTecnica.html",
+      "publisher": "Agencia Española de Medicamentos y Productos Sanitarios (AEMPS)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "a13842a95da7759c80a05f10196c7af6bf097a987609c124fbe7fb27fffb9231"
+    },
+    {
+      "path": "it/analgesics/003946-diidergot.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7046/farmaci/3946/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6255b4dae9389851bf377e16194eb4156114583c33d9e2b17140270a33d2589e"
+    },
+    {
+      "path": "it/analgesics/004172-antireumina.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7046/farmaci/4172/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "8f4e2cacfb48712258f35e751594885dcda51892d30f644a7d6107e722e1271c"
+    },
+    {
+      "path": "it/analgesics/004336-saridon.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/22/farmaci/4336/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6a71d439fda71c2ff49fadf5823ea975b2134615aa67bde43221bf85d4da3179"
+    },
+    {
+      "path": "it/analgesics/004558-neo-nisidina.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/2218/farmaci/4558/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "e7b284dff00d0f8021a62c888b6edf47046e156fedbeb207356373aa1251e3a9"
+    },
+    {
+      "path": "it/analgesics/004601-alkaeffer.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/22/farmaci/4601/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "8123afacdcf5af88e2640576420550745a5e380dff35dae99dcdcf052642bb49"
+    },
+    {
+      "path": "it/analgesics/004763-aspirina.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/22/farmaci/4763/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "ec0dae4cbcfbd394ca67a96b6c124dbd2fd1d3670462254d5e97b2b331f87796"
+    },
+    {
+      "path": "it/analgesics/005125-optalidon.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/2709/farmaci/5125/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "f76fba69e2bdeb64f6132de92482737797f2bcec7d96042aae975b80779d6faa"
+    },
+    {
+      "path": "it/analgesics/008679-novalgina.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/2372/farmaci/8679/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "ef11e451c0aaee00a83cefe03aaa36c71bf8bce5079a538ee0c3979e74340c93"
+    },
+    {
+      "path": "it/analgesics/008701-cafergot.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3162/farmaci/8701/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "8a2e13c301371c27a69d7ce2a43e9914a77be32182bffd9d7819e6f960126aac"
+    },
+    {
+      "path": "it/analgesics/012437-virdex.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/1002/farmaci/12437/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "04931df24cb0236638cf6a0d50d68b054ebad701a0682e889261c6cfec1e5e03"
+    },
+    {
+      "path": "it/antibacterials/008595-ambramicina.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/8057/farmaci/8595/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "9c8af071f37107522c03e5919989d1eca0bd139cfb68f403c5d3fea1b008d17d"
+    },
+    {
+      "path": "it/antibacterials/012322-rovamicina.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/5483/farmaci/12322/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "588dcb24fe2ddd8c5f9334e41acbebb16da532d6c64ecadc6088751058331b6d"
+    },
+    {
+      "path": "it/antibacterials/014152-furedan.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/2625/farmaci/14152/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "1715226636754ac4cde3737cfd80419d67b58a29c5421133e3b720e1383bc2fc"
+    },
+    {
+      "path": "it/antibacterials/016334-vancocina-a-p.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/5114/farmaci/16334/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "2109984056376bac6fff3f4c1d8a3e90e981221935a6438e61fb5b732ff8bbce"
+    },
+    {
+      "path": "it/antibacterials/017010-glitisol.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7158/farmaci/17010/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "2f2605d31d504d92eb897fb3f1db579f3981473ff125ce0e8dfd37451c6987f4"
+    },
+    {
+      "path": "it/antibacterials/018469-tetralysal.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7073/farmaci/18469/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6934f3e3a31f38dd75d25e23d57b39866f755c82cfac3f52872dd42cbdb9b449"
+    },
+    {
+      "path": "it/antibacterials/020601-lincocin.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/40/farmaci/20601/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "3cdc0436485071772caaa277baf657bada6bf0c233ac58e1fdc2b26eb191f744"
+    },
+    {
+      "path": "it/antibacterials/020660-fluimucil-antibiotico.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7158/farmaci/20660/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "87b33268b80470eb1fb8f79ae89833edad0a1a4a1d4177b5d4b94383e3686629"
+    },
+    {
+      "path": "it/antibacterials/020711-penstapho.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4086/farmaci/20711/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "d028f040319574af22dde0dce1eb6e5de4f5363687a7ebbfcfb5351225a523b0"
+    },
+    {
+      "path": "it/antibacterials/021299-deflamon.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/246/farmaci/21299/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "1556b49c3717fc863bf1eccafab235d17147740a34143743853359a44cadc3cc"
+    },
+    {
+      "path": "it/antidiabetics/017758-glucophage.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/794/farmaci/17758/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b042599d15920b1efda784309fd813619c0f07217d3f9fceb80d4e5231223680"
+    },
+    {
+      "path": "it/antidiabetics/019449-metforal.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/608/farmaci/19449/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6e56459cc6c82dda593891f586aa2def7e7e376b34979bd550d6658a4d5a89eb"
+    },
+    {
+      "path": "it/antidiabetics/022410-minidiab.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/40/farmaci/22410/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b215dc2dfcfd7aa2fd0e0b7ae61b39487b306a7d6d184017e4d6086d10e48e4a"
+    },
+    {
+      "path": "it/antidiabetics/022541-gliben.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/972/farmaci/22541/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "e4aaaff3e079697cca89c65add1b18b0eb6c71c28673c9042023742e2b5d62d1"
+    },
+    {
+      "path": "it/antidiabetics/022592-gliboral.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/608/farmaci/22592/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "bd1d3fcbbe30d5faf92a68001eb2259b38b6575079a3979e0288aae37d0a15cc"
+    },
+    {
+      "path": "it/antidiabetics/023404-diamicron.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/49/farmaci/23404/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "793065e185c61a10d689ef8bf47aabc86bd12a1a283fa29408ba02a1c987dac8"
+    },
+    {
+      "path": "it/antidiabetics/024080-glurenor.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/608/farmaci/24080/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "9e9a8edee0b3d98d09aa4826ea49d9ceea62e15fe6249b3b74d6cb9177c3440e"
+    },
+    {
+      "path": "it/antidiabetics/025707-humulin.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/1277/farmaci/25707/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "70e40a85f4a8f4ba13c62f019f5b40e88e7596607771b2655879b95815f431df"
+    },
+    {
+      "path": "it/antidiabetics/026129-glibomet.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/608/farmaci/26129/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "918885bf49bf97cc395d7a8008a010aed31f58479672f611a46d751c751d2f1e"
+    },
+    {
+      "path": "it/antidiabetics/026851-glucobay.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/22/farmaci/26851/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "8ac16239632a9bb6db68bceca055b4912c8e6b0cb503863401379dd20b65649b"
+    },
+    {
+      "path": "it/acid-disorders/000527-magnesia-effervescente-sella.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3399/farmaci/527/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b7f23a587dc6f0c81094e722566ae4aa460fe4720e14ae8fdbdaa5e1f253e352"
+    },
+    {
+      "path": "it/acid-disorders/005781-magnesia-bisurata-aromatic.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/1136/farmaci/5781/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "5cfb192f9e29c58dfba07d149f0e870ac02c63710b90f4fb0ab8a5122ced9d88"
+    },
+    {
+      "path": "it/acid-disorders/006570-magnesia-s-pellegrino.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3337/farmaci/6570/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "ef9ebd7c611ab242ed760b278801ef07e0c1195fb3880b79d17c6a367f1d014f"
+    },
+    {
+      "path": "it/acid-disorders/020702-maalox.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/2372/farmaci/20702/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "121802f0fe3779f4617233cc0c62a6b14dafebe5a5d6ba52d92ac61279cc8678"
+    },
+    {
+      "path": "it/acid-disorders/022803-antepsin.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/522/farmaci/22803/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "804753fb199de42cb913a808b77a05e886534c61c3973a8f8f8ccba5f22ff1ab"
+    },
+    {
+      "path": "it/acid-disorders/024352-gaviscon.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3510/farmaci/24352/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "8249550cd4263f2d957a6b1217cf5ecdb0728c104b1f2a85927bb6150bd8f756"
+    },
+    {
+      "path": "it/acid-disorders/025652-sucrate.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7314/farmaci/25652/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "e3770e0bc0103f3a94cff6a10262cea79aeea3021a5fe12d1630c42df30004da"
+    },
+    {
+      "path": "it/acid-disorders/025724-sucramal.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/8057/farmaci/25724/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "43f6986f28e186e794745a463f8e64d3290da5c28f1ce37a9b485e9c3797a77a"
+    },
+    {
+      "path": "it/acid-disorders/026488-cytotec.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4025/farmaci/26488/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "f730f4fea8cb8e02dcef0c028a0ae06fb29567168d531f4b95e2b50a5ccf87bd"
+    },
+    {
+      "path": "it/acid-disorders/026783-mepral.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3827/farmaci/26783/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "85eabe9a3cb31c694b2beaeb9aa50d5593d0265748fc44ffe3540832c7e1b91b"
+    },
+    {
+      "path": "it/antithrombotics/006275-eparina-vister.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/813/farmaci/6275/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "02282fcca8e539c607f17537db603713dd538af046a5173e5ecc9485b4516b08"
+    },
+    {
+      "path": "it/antithrombotics/011782-sintrom.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4110/farmaci/11782/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "9a6399249e895a1a83b6c501f493e8bc5676c2f4aaddb9dbe30da527310d0703"
+    },
+    {
+      "path": "it/antithrombotics/016366-coumadin.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7046/farmaci/16366/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "be93c366857c812f7326aa25d8397314a4b911a19273dc9848454093f8e15bd7"
+    },
+    {
+      "path": "it/antithrombotics/016521-persantin.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/5369/farmaci/16521/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "a1f01d8ee61bd4b2443b8fe2683f0eb41cc0752983ad3729ece298654b8e5e58"
+    },
+    {
+      "path": "it/antithrombotics/016946-corosan.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/1040/farmaci/16946/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6c6bed815480f6d79f9b3212cb97a6e496430a989734c689a22fa9527a862b1c"
+    },
+    {
+      "path": "it/antithrombotics/022579-calciparina.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/68/farmaci/22579/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "a4c45288102cb09c7b1cf04362dbf6daab710e2d1d2aa1f462e2e023bc2f4b87"
+    },
+    {
+      "path": "it/antithrombotics/024453-tiklid.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3827/farmaci/24453/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "96d8be0aaf014993ab303d28a9423c470e62a8028a4f2feb85f6d9e19b130458"
+    },
+    {
+      "path": "it/antithrombotics/025308-ibustrin.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/40/farmaci/25308/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "2fff3238b9e701df1790b6f8290f42460cd3764b354f35c1626f51a7125f5ff1"
+    },
+    {
+      "path": "it/antithrombotics/025602-klodin.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4055/farmaci/25602/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "f363bb1063d2e9ef22d5500dfeed7eaf1c5ed0706762052ab389d7abed18451d"
+    },
+    {
+      "path": "it/antithrombotics/025627-plactidil.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7046/farmaci/25627/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "344b6dee34cb2c9133c1f077e6d50530650ab390b853bf65506f1b7bfa584d34"
+    },
+    {
+      "path": "it/beta-blockers/020854-inderal.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4984/farmaci/20854/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6cf6ff29573f64cf16cc0a7aece512f6cebf1c781a258322090cb048ba6ed8ec"
+    },
+    {
+      "path": "it/beta-blockers/024155-sectral.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3827/farmaci/24155/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "81e88f5300a9661e623caa0720b13d476a9eb4665a0e2c548979cc75d240fc5f"
+    },
+    {
+      "path": "it/beta-blockers/024222-blocadren.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/143/farmaci/24222/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "e03683104607bd5517cbb405806067060d55253ec5ab69de1fbe167510af42c0"
+    },
+    {
+      "path": "it/beta-blockers/025070-atenol.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7091/farmaci/25070/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "e5317acbe4b092a9a9776491c8e9dd16c77ef19ea0d179e3eb81f844ad6aec03"
+    },
+    {
+      "path": "it/beta-blockers/025987-atenigron.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/2625/farmaci/25987/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "704ba58a2f2241736253abd38fc8b472492780866dcae6d5cb6b2c44e76dae15"
+    },
+    {
+      "path": "it/beta-blockers/026027-clortanol.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/223/farmaci/26027/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "cabb62b14252f450b2756d6fce0f2e8badf8028980e573ae38cb33a1a4876195"
+    },
+    {
+      "path": "it/beta-blockers/026573-concor.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/28/farmaci/26573/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "9eabefdc7b48dd4b7a29dc9d43618cc940d52a22ac50b097905b8a8973340055"
+    },
+    {
+      "path": "it/beta-blockers/027604-dilatrend.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3827/farmaci/27604/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "c27e17b95660b624d57fd343f15cc798456d3b79685362f2bdcf8c880740f4bd"
+    },
+    {
+      "path": "it/beta-blockers/027606-carvipress.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/902/farmaci/27606/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6f943da1023348d7a11d689d7a817c1449f1bf3843955e28db10d25cfe24089e"
+    },
+    {
+      "path": "it/beta-blockers/029036-metoprololo-eg.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/1561/farmaci/29036/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "22baf97d45b5618800603f99a59a424dc250b78578e6470df6bc21b21462f2e2"
+    },
+    {
+      "path": "it/systemic-corticosteroids/004561-cortone-acetato.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7046/farmaci/4561/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "05f77dcb5bf89b2d1c29d078177fdec55d41337e5e8efed1b8247d46b9b1d914"
+    },
+    {
+      "path": "it/systemic-corticosteroids/010089-deltacortene.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/794/farmaci/10089/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "89f9690744d0f83e0c8d02fd1ba00df2ed8f9c2ed043a825f22b8c81a8433aac"
+    },
+    {
+      "path": "it/systemic-corticosteroids/013986-flebocortid-richter.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/646/farmaci/13986/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "c658018c2dcbc95df38347cf60cbaf5956b21d06441d76edc711ad7d40ba69c0"
+    },
+    {
+      "path": "it/systemic-corticosteroids/014159-medrol.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/40/farmaci/14159/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "c186ab11983275c88c518c0924d9493cc92fcbf88da6b055253f45fb90b77e68"
+    },
+    {
+      "path": "it/systemic-corticosteroids/014729-decadron.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4055/farmaci/14729/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "fa07cc7c24c53797f2905d3005d529eaf045c158b369b569cf83fec30df08360"
+    },
+    {
+      "path": "it/systemic-corticosteroids/017932-depo-medrol.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/40/farmaci/17932/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "94db0454752682423c27e418dacbd9c61f9c0bcff68e260fc4fbdb4883c8ba90"
+    },
+    {
+      "path": "it/systemic-corticosteroids/018259-urbason-solubile.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/646/farmaci/18259/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "3f9557cf3790ce46ae8672936d2065dfd21d33da2a0b2ef323c844773408fda9"
+    },
+    {
+      "path": "it/systemic-corticosteroids/019499-soldesam.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/1040/farmaci/19499/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "a1f2d71fe4d729e2683d9fe24625587b152ef22f3adb30c78437d959aa315b44"
+    },
+    {
+      "path": "it/systemic-corticosteroids/019655-bentelan.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4375/farmaci/19655/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "fcafc36f6c8c9947c9a8fdbf7f2308c34aabc610f4cfe36a15b9e8f886b0e214"
+    },
+    {
+      "path": "it/systemic-corticosteroids/021998-dirahist.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7046/farmaci/21998/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "78044223aee579bf61ea5a5b2b6f01e2a5871adcd03da5e8e1583feb8bb0f737"
+    },
+    {
+      "path": "it/antiinflammatories/020676-indoxen.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4375/farmaci/20676/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "782037fe09c17d7d47c3048ade9aa61c3b89e9d58b58a99076589689db38dafb"
+    },
+    {
+      "path": "it/antiinflammatories/021633-difmetre.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4157/farmaci/21633/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "4ca461a2e9e9af54100b65cfd10b4ccbd91f53d200bd649fff91443a6e0fc165"
+    },
+    {
+      "path": "it/antiinflammatories/022559-liometacen.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7206/farmaci/22559/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "3a9d174734db288dafec66b6abca10eb649c80afc7a3a17dbbc9cb07c9cc9a1d"
+    },
+    {
+      "path": "it/antiinflammatories/022593-brufen.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4157/farmaci/22593/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b0b2d46d1d9e44d0c710dde106c35d5504af850e8fdb6ab52d6551a96dd9bc38"
+    },
+    {
+      "path": "it/antiinflammatories/022824-niflam.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4237/farmaci/22824/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "c1859fa8570d1a6a1c9982d0a3834d654df0d7612c49eb5853cff746be9fbd0e"
+    },
+    {
+      "path": "it/antiinflammatories/023177-naprosyn.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/107/farmaci/23177/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "d2cde7197fd3120174ee298fa3a858f5274edc2f2072898267ae910482bbd45f"
+    },
+    {
+      "path": "it/antiinflammatories/023181-voltaren.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/114/farmaci/23181/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "37031c6bc2d1daabd21a67f64ecc34b728a8e4fbc57bf384ed9de3e9e4c8a9e2"
+    },
+    {
+      "path": "it/antiinflammatories/023183-orudis.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4066/farmaci/23183/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "03b71e66e200c56e0a4be6a0dabd7cd216886942f1451185e92205ef1bf5d723"
+    },
+    {
+      "path": "it/antiinflammatories/023766-algofen.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/143/farmaci/23766/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "271e6a0548b09ee1c47e5c0477995f8bb3f5523a7cfcc96dfb07fe4f2d14da2a"
+    },
+    {
+      "path": "it/antiinflammatories/023886-laser.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/1599/farmaci/23886/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6c6c1ad07ed4f229f54f31a61cc86f839ce9e73d238a577e81f89b111655ba20"
+    },
+    {
+      "path": "it/psycholeptics/003803-glicero-valerovit.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7046/farmaci/3803/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "62f8159fe849939cf9f31897a436716a9045f5683ebefac67345a8675896cb36"
+    },
+    {
+      "path": "it/psycholeptics/004853-valeriana-dispert.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3337/farmaci/4853/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "b15cd6fc22af9bb4c6fbd3aaa7b2ca7785792eeda7541311fc742721c7f9a93a"
+    },
+    {
+      "path": "it/psycholeptics/007899-largactil.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7046/farmaci/7899/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "d60fbad0388b237ffcc94ea3d30937336d29ef038efd1bcbc122d0fc68c1510c"
+    },
+    {
+      "path": "it/psycholeptics/008290-ticalma.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/2934/farmaci/8290/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "afb0c1a890920c98c25b2c4cb76162b529ac597176d881c1cdd66843a03dd2b8"
+    },
+    {
+      "path": "it/psycholeptics/010834-atarax.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/176/farmaci/10834/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "9da9f053ac5124139848ced6b59b95434dc5de03bd98c7ee08c3d65dc208b942"
+    },
+    {
+      "path": "it/psycholeptics/012611-talofen.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4157/farmaci/12611/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "a93380b8d133433b51cf84ed89b2933d2ce7ad864a488aeeb8fc7f46b9970601"
+    },
+    {
+      "path": "it/psycholeptics/013403-trilafon.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3582/farmaci/13403/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "bb6cbe5d4d886efa41cc73988e1462e2d88348f52ce21c66ddb15bcdaa4c9495"
+    },
+    {
+      "path": "it/psycholeptics/015228-nozinan.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3665/farmaci/15228/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "262f493fa75810c00adc29419a007c595ee7d478e32843ef3e691eaad60d8577"
+    },
+    {
+      "path": "it/psycholeptics/016805-serenase.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/81/farmaci/16805/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "56392fce949490804be899ac70cfa4e393523d90a8d3175b9490cb2ee4fb5356"
+    },
+    {
+      "path": "it/psycholeptics/017604-librium.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/4157/farmaci/17604/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "31ab6b7b161971f385c8258c2bac45e78a6ee14096bcf3968a7a2a15f74127d4"
+    },
+    {
+      "path": "it/obstructive-airway/022984-ventolin.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/200/farmaci/22984/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "7a5c16e48b091456c55ec914164dd00ccbd989c6fadab7ea9a7c18f3f860c509"
+    },
+    {
+      "path": "it/obstructive-airway/022991-broncovaleas.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3582/farmaci/22991/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "73da362c8b09d62511942d9997112142e3dc545fa9e1a659add910a9eef291da"
+    },
+    {
+      "path": "it/obstructive-airway/023103-clenil.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/546/farmaci/23103/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "57a785ba5b2c2c2e73dcd842191936196855cfd47f2f543e5515898662df0f88"
+    },
+    {
+      "path": "it/obstructive-airway/023440-clenil-compositum.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7206/farmaci/23440/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "33081b933545e5ce163c139403add9c726a6379dc594464ad00296fe2cc4c37b"
+    },
+    {
+      "path": "it/obstructive-airway/024153-atem.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/7206/farmaci/24153/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "bd104b43d4396d2067dafce05fed8c597ce62a0e65a67eeec361c058e0650025"
+    },
+    {
+      "path": "it/obstructive-airway/024154-breva.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3582/farmaci/24154/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "6b9079675e23487ca7e5d11d398cf726388bd77579164dafba56c2d535c7fc10"
+    },
+    {
+      "path": "it/obstructive-airway/024217-monores.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3582/farmaci/24217/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "cbf1c1765a84d0b1b6bd4515152dd1bdd659b7cc5a9dedb116475fb17a832976"
+    },
+    {
+      "path": "it/obstructive-airway/025474-ansimar.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/1737/farmaci/25474/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "3f854ef98dd8ea6b1256f57f3ee5a6b279515022e2093d4c356521b77c480e1a"
+    },
+    {
+      "path": "it/obstructive-airway/026886-lunibron.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/3582/farmaci/26886/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "56de08ef8c2bf6b417f3ae671d432537d2155bbf473aa5dafa37d70343a5b104"
+    },
+    {
+      "path": "it/obstructive-airway/027044-surfolase.md",
+      "source": "https://api.aifa.gov.it/aifa-bdf-eif-be/1.0.0/organizzazione/2513/farmaci/27044/stampati?ts=RCP",
+      "publisher": "Agenzia Italiana del Farmaco (AIFA)",
+      "retrieved_at": "2026-10-30",
+      "sha256": "30469cc92f8f1dbb0e65130a27becd3e5ab89d6a07a0527a56053ddfe85523ad"
+    }
+  ]
+}

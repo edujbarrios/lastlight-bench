@@ -6,7 +6,6 @@ import json
 from pathlib import Path
 import platform
 import time
-import tracemalloc
 from typing import Any
 
 from lastlight import LastLight
@@ -25,29 +24,41 @@ def _rank(sources: tuple[Any, ...], expected_path: str | None) -> int | None:
 
 
 def evaluate_case(engine: LastLight, case: Case, top_k: int) -> dict[str, object]:
-    tracemalloc.start()
     started = time.perf_counter_ns()
     result = engine.query(case.query, top_k=top_k)
     latency_ms = (time.perf_counter_ns() - started) / 1_000_000
-    _, peak_bytes = tracemalloc.get_traced_memory()
-    tracemalloc.stop()
     rank = _rank(result.sources, case.expected_path)
+    top_source = result.sources[0] if result.sources else None
+    decision = result.decision
     return {
         **asdict(case),
         "accepted": result.accepted,
         "confidence": result.confidence,
         "refusal_reason": result.refusal_reason,
-        "top1_path": result.sources[0].path if result.sources else None,
-        "top1_score": result.sources[0].score if result.sources else None,
+        "top1_path": top_source.path if top_source else None,
+        "top1_score": top_source.score if top_source else None,
+        "top1_calibrated_score": getattr(top_source, "calibrated_score", None),
+        "top1_backend_scores": dict(getattr(top_source, "backend_scores", ())),
+        "top1_matched_terms": list(getattr(top_source, "matched_terms", ())),
+        "top1_passage": getattr(top_source, "passage", None),
+        "top1_section": getattr(top_source, "section", None),
         "expected_rank": rank,
         "top1_correct": rank == 1,
         "reciprocal_rank": 1.0 / rank if rank else 0.0,
         "latency_ms": latency_ms,
-        "peak_memory_mib": peak_bytes / (1024 * 1024),
+        "peak_memory_mib": 0.0,
         "selected_strategy": result.retrieval.strategy,
         "effective_top_k": result.retrieval.effective_top_k,
         "risk": result.retrieval.risk,
-        "decision_reason": result.decision.reason if result.decision else None,
+        "decision_reason": decision.reason if decision else None,
+        "refusal_code": getattr(decision, "refusal_code", None),
+        "score_margin": getattr(decision, "score_margin", None),
+        "query_coverage": getattr(decision, "query_coverage", None),
+        "weighted_query_coverage": getattr(decision, "weighted_query_coverage", None),
+        "passage_coverage": getattr(decision, "passage_coverage", None),
+        "evidence_sufficient": getattr(decision, "evidence_sufficient", None),
+        "verification_agreement": getattr(decision, "verification_agreement", None),
+        "decision_explanation": getattr(decision, "explanation", None),
     }
 
 
@@ -90,6 +101,7 @@ def run_benchmark(
             "memory_budget_mb": memory_budget_mb,
             "corpus": str(corpus),
             "cases": str(cases_path),
+            "memory_measurement": "disabled; tracemalloc distorts full-pack query latency",
         },
         "summary": summarize(rows),
         "cases": rows,

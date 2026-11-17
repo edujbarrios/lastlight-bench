@@ -1,0 +1,15 @@
+{
+  "categories": [
+    {"slug": "analgesics", "names": {"es": "Analgésicos", "it": "Analgesici"}, "atc": "N02", "limit": 10},
+    {"slug": "antibacterials", "names": {"es": "Antibacterianos para uso sistémico", "it": "Antibatterici per uso sistemico"}, "atc": "J01", "limit": 10},
+    {"slug": "antidiabetics", "names": {"es": "Medicamentos usados en diabetes", "it": "Farmaci usati nel diabete"}, "atc": "A10", "limit": 10},
+    {"slug": "acid-disorders", "names": {"es": "Medicamentos para trastornos relacionados con la acidez", "it": "Farmaci per disturbi correlati all'acidità"}, "atc": "A02", "limit": 10},
+    {"slug": "antithrombotics", "names": {"es": "Agentes antitrombóticos", "it": "Agenti antitrombotici"}, "atc": "B01", "limit": 10},
+    {"slug": "beta-blockers", "names": {"es": "Agentes beta-bloqueantes", "it": "Agenti beta-bloccanti"}, "atc": "C07", "limit": 10},
+    {"slug": "systemic-corticosteroids", "names": {"es": "Corticosteroides para uso sistémico", "it": "Corticosteroidi per uso sistemico"}, "atc": "H02", "limit": 10},
+    {"slug": "antiinflammatories", "names": {"es": "Productos antiinflamatorios y antirreumáticos", "it": "Prodotti antinfiammatori e antireumatici"}, "atc": "M01", "limit": 10},
+    {"slug": "psycholeptics", "names": {"es": "Psicolépticos", "it": "Psicolettici"}, "atc": "N05", "limit": 10},
+    {"slug": "obstructive-airway", "names": {"es": "Medicamentos para enfermedades obstructivas de las vías respiratorias", "it": "Farmaci per le malattie ostruttive delle vie respiratorie"}, "atc": "R03", "limit": 10}
+  ]
+}
+

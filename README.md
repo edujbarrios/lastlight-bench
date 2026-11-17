@@ -2,67 +2,25 @@
 
 [![CI](https://github.com/edujbarrios/lastlight-bench/actions/workflows/ci.yml/badge.svg)](https://github.com/edujbarrios/lastlight-bench/actions/workflows/ci.yml)
 
-A reproducible evaluation of [LastLight](https://github.com/edujbarrios/lastlight) as an offline retrieval system for resource-constrained environments. The benchmark measures document ranking, answer/refusal calibration, bilingual behavior, adaptive routing, latency, and Python allocation peaks through LastLight's public API.
+A reproducible benchmark for [LastLight](https://github.com/edujbarrios/lastlight) using official Spanish and Italian medicine documents extracted from CIMA/AEMPS and AIFA. It measures document ranking, answer/refusal calibration, bilingual behavior, and query latency through LastLight's public API.
 
 > [!CAUTION]
-> **The recommendations included in this corpus were produced by ChatGPT for benchmarking purposes.** In a real deployment, every statement must be independently verified and must follow the criteria, authority, and procedures of the responsible organization. Those internal criteria are normally private, so this repository uses synthetic documents that only emulate the structure of operational guidance. The dataset is exclusively for benchmark evaluation and must never be used for operational decisions.
+> The corpus contains official medicine information, but this repository is a retrieval benchmark and must not be used for diagnosis, prescribing, dosing, or other medical decisions. Always consult the current official source and an appropriate healthcare professional.
 
 ## Benchmark design
 
 The benchmark has four independently versioned layers:
 
-1. **Corpus:** 32 long-form operational manuals, 15,606 words, 22 English documents and 10 Spanish documents.
-2. **Ground truth:** 160 labeled queries—108 answerable and 52 expected refusals. Forty-eight queries are in Spanish.
-3. **Execution matrix:** lexical, BM25, three adaptive modes, a 0.4 mWh policy budget, and a 64 MiB memory policy budget.
+1. **Corpus:** 200 official medicine documents (10 per therapeutic category and language), 1,171,017 words, in Spanish and Italian.
+2. **Ground truth:** 60 labeled queries: 40 answerable active-ingredient lookups and 20 hard negatives requiring live pharmacy stock or personalized dosing.
+3. **Execution matrix:** lexical, BM25, and hybrid retrieval in balanced mode.
 4. **Evaluation:** per-query results, aggregate metrics, and slices by language, difficulty, category, and tag.
 
-The documents deliberately overlap. Water advisory, treatment, flushing, and pump-operation manuals share terminology; generator, electrical, battery, fuel, and refrigeration procedures intersect; radio, satellite, and formal-message protocols compete for similar queries. This prevents simple keyword matching from producing an artificially perfect result.
+The corpus is pinned from `medicine-pack-extractor@2d10e489dbe602ecf7cae36dd0fd3a668155f542`. The selected slice and extractor configuration are committed in [`datasets/medicine-pack-slice.json`](datasets/medicine-pack-slice.json) and [`datasets/medicine-pack-config.json`](datasets/medicine-pack-config.json). The deterministic case generator is [`scripts/generate_medicine_dataset.py`](scripts/generate_medicine_dataset.py).
 
-### What is evaluated
+This is a closed-corpus retrieval benchmark. It does not assess the clinical truth or completeness of an answer, generated prose, or generalization to unrelated corpora.
 
-| Dimension | Concrete test |
-|---|---|
-| Retrieval quality | Whether the labeled document appears first and how highly it ranks overall. |
-| Answer calibration | Whether LastLight answers supported questions and refuses unsupported ones. |
-| Hard negatives | Questions that mention corpus terminology but request absent live state, identities, credentials, prescriptions, or authority decisions. |
-| Near-neighbor discrimination | Whether LastLight separates manuals with shared entities, warnings, and procedures. |
-| Bilingual retrieval | English and Spanish queries against a single mixed-language pack. |
-| Query difficulty | Direct lookup, paraphrase, numeric constraints, negation, multi-condition, contrastive, and multi-step cases. |
-| Adaptive policy | Strategy and `top_k` selected under survival, balanced, accuracy, energy, and memory policies. |
-| Efficiency | Warmed query latency and peak Python allocations on the measured host. |
-| Auditability | Source path, score, confidence, matched terms, refusal reason, and planner decision retained per case. |
-
-This is a closed-corpus retrieval benchmark. It does not score generated prose, verify the real-world truth of synthetic recommendations, measure physical energy consumption, or claim generalization to unrelated corpora.
-
-## Baseline results
-
-LastLight 0.2.2, Python 3.12, Windows 11, `top_k=3`, three warm-up queries:
-
-| Strategy / mode | Top-1 | MRR | Answer precision | Answerable recall | Refusal recall | False accept | Mean ms | P95 ms | Peak MiB |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| lexical / balanced | 77.8% | 0.867 | 80.5% | 64.8% | 88.5% | 11.5% | 217.82 | 335.96 | 0.73 |
-| bm25 / balanced | 86.1% | 0.921 | 92.9% | 48.1% | 100.0% | 0.0% | 195.65 | 253.27 | 0.73 |
-| adaptive / survival | 77.8% | 0.861 | 80.5% | 64.8% | 88.5% | 11.5% | 177.94 | 236.27 | 0.73 |
-| adaptive / balanced | 83.3% | 0.910 | 90.2% | 50.9% | 98.1% | 1.9% | 207.83 | 273.55 | 0.73 |
-| adaptive / accuracy | 86.1% | 0.921 | 92.7% | 47.2% | 100.0% | 0.0% | 220.94 | 277.22 | 0.73 |
-| adaptive / balanced / 0.4 mWh | 77.8% | 0.861 | 80.5% | 64.8% | 88.5% | 11.5% | 204.16 | 257.61 | 0.73 |
-| adaptive / balanced / 64 MiB | 77.8% | 0.861 | 80.5% | 64.8% | 88.5% | 11.5% | 212.07 | 265.49 | 0.73 |
-
-LastLight 0.2.2 fixes the major calibration failure observed in 0.2.1. BM25 now refuses all 52 unsupported queries, reducing false acceptance from 96.2% to 0%, while answer precision rises from 58.9% to 92.9%. The trade-off is deliberate but substantial: BM25 answerable recall falls from 86.1% to 48.1%. Lexical is less conservative, retaining 64.8% answerable recall with an 11.5% false-accept rate. The new policy strongly improves safety, but future calibration work should recover supported answers without reopening hard negatives.
-
-### Bilingual retrieval
-
-| Configuration | English Top-1 | Spanish Top-1 | English answerable recall | Spanish answerable recall |
-|---|---:|---:|---:|---:|
-| lexical | 80.3% | 71.9% | 64.5% | 65.6% |
-| BM25 | 86.8% | 84.4% | 47.4% | 50.0% |
-| adaptive balanced | 84.2% | 81.2% | 48.7% | 56.2% |
-
-Spanish ranking remains close to English ranking. Spanish answerable recall is slightly higher under the calibrated policies, while Spanish refusal recall ranges from 93.8% to 100%. The comparison is meaningful because Spanish is represented by full-length competing manuals and hard negatives, rather than a few demonstration queries.
-
-Host-sensitive latency and allocation values are descriptive, not universal product claims. The complete per-case artifact is committed at [`results/baseline.json`](results/baseline.json).
-
-## Metric definitions
+## Metrics
 
 | Metric | Definition |
 |---|---|
@@ -73,9 +31,30 @@ Host-sensitive latency and allocation values are descriptive, not universal prod
 | Refusal recall | Refused unanswerable cases / unanswerable cases. |
 | False accept | Accepted unanswerable cases / unanswerable cases. |
 | Mean / P95 ms | Wall-clock `LastLight.query` latency after warm-up. |
-| Peak MiB | Peak Python allocation measured with `tracemalloc`, not process RSS. |
 
-Lexical and BM25 score scales are strategy-specific and are never compared directly. No composite score hides the ranking/calibration trade-off.
+Memory measurement is disabled because `tracemalloc` materially distorts full-pack query latency. Latency is host-sensitive and is descriptive, not a universal product claim.
+
+## Baseline results
+
+LastLight 0.3.1, `top_k=3`, three warm-up queries:
+
+| Strategy / mode | Top-1 | MRR | Answer precision | Answerable recall | Refusal recall | False accept | Mean ms | P95 ms |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| lexical / balanced | 95.0% | 0.975 | 100.0% | 50.0% | 100.0% | 0.0% | 8,938.48 | 11,621.36 |
+| bm25 / balanced | 97.5% | 0.975 | 95.5% | 52.5% | 100.0% | 0.0% | 5,065.24 | 11,276.39 |
+| hybrid / balanced | 97.5% | 0.975 | 100.0% | 52.5% | 100.0% | 0.0% | 7,514.31 | 11,730.93 |
+
+All strategies refused every hard negative. BM25 and hybrid reached the best Top-1 and answerable recall; lexical and hybrid had no incorrect accepted answers. The full official pack also exposes a substantial latency increase compared with the previous small synthetic corpus.
+
+### Language slices
+
+| Strategy | Spanish Top-1 | Italian Top-1 | Spanish answerable recall | Italian answerable recall |
+|---|---:|---:|---:|---:|
+| lexical | 90.0% | 100.0% | 90.0% | 10.0% |
+| BM25 | 95.0% | 100.0% | 65.0% | 40.0% |
+| hybrid | 95.0% | 100.0% | 75.0% | 30.0% |
+
+Ranking is strong in both languages, while acceptance is much more conservative for Italian. This gap is visible rather than hidden by the aggregate score. The complete per-case artifact is committed at [`results/baseline.json`](results/baseline.json).
 
 ## Reproduce
 
@@ -84,6 +63,7 @@ git clone https://github.com/edujbarrios/lastlight-bench.git
 cd lastlight-bench
 python -m venv .venv
 python -m pip install -e ".[dev]"
+python scripts/generate_medicine_dataset.py
 lastlight-bench-suite --output results/local.json
 lastlight-bench-gate results/local.json
 ```
@@ -92,25 +72,23 @@ Focused runs:
 
 ```bash
 lastlight-bench --strategy lexical --output results/lexical.json
-lastlight-bench --strategy adaptive --mode survival --output results/survival.json
-lastlight-bench --strategy adaptive --energy-budget-mwh 0.4 --output results/low-energy.json
+lastlight-bench --strategy bm25 --output results/bm25.json
+lastlight-bench --strategy hybrid --output results/hybrid.json
 ```
-
-The energy and memory values exercise LastLight's planning policy; they are not measurements of physical energy or process RSS.
 
 ## Repository structure
 
 ```text
-corpus/field-ops-v1/   versioned bilingual LastLight pack
-datasets/eval.jsonl    query-level labels and experimental slices
-src/lastlight_bench/   runner, metrics, reports, suite, and gates
-results/baseline.json  raw reproducible baseline artifact
-tests/                 corpus, schema, metric, integration, and gate tests
-.github/workflows/     Python matrix and deterministic benchmark CI
+corpus/official-medicines-es-it/  pinned bilingual LastLight pack
+datasets/                         labels and extractor slice/configuration
+scripts/                          deterministic dataset generation
+src/lastlight_bench/              runner, metrics, reporting, suite, and gates
+results/baseline.json             raw reproducible baseline artifact
+tests/                            corpus, schema, metric, integration, and gate tests
 ```
 
-Every JSONL case declares `id`, `query`, `language`, `category`, `answerable`, `expected_path`, `difficulty`, and `tags`. Corpus changes and label changes therefore produce explicit reviewable diffs.
+Every JSONL case declares `id`, `query`, `language`, `category`, `answerable`, `expected_path`, `difficulty`, and `tags`. Corpus and label changes therefore produce explicit reviewable diffs.
 
 ## License
 
-Mozilla Public License 2.0. The synthetic corpus is marked CC0-1.0 in its pack manifest.
+Mozilla Public License 2.0. Refer to the pack manifest and original CIMA/AEMPS and AIFA sources for source-data provenance and terms.
